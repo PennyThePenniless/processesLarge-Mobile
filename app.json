@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mobileLarge",
+    "slug": "mobileLarge",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mobileLarge"
+}
