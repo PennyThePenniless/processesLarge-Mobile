@@ -1,36 +1,42 @@
-import React from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, TextInput, View, TouchableHighlight, Alert } from 'react-native';
+import React, { Component, useState } from 'react';
+import { ActivityIndicator, Button, StyleSheet, Text, TouchableOpacity, TextInput, View, TouchableHighlight, Alert } from 'react-native';
 
-const LoginScreen = ({navigation}) => {
-    const {username, onChangeUsername, password, onChangePassword} = React.useState(null);
+global.email = "", global.password = "";
 
+export default class LoginScreen extends Component {
+  render() {
     return (
-    <View style= {styles.mainContainer}>
+      <View style= {styles.mainContainer}>
         <View style= {styles.container}>
             <View style= {styles.loginBox}>
                 <Text style={styles.login}>Sign In</Text>
                 <Text style= {styles.text}>Username</Text>
                 <TextInput style={styles.textInput}
                 onFocus={null}
-                onChangeText={onChangeUsername}
-                value={username}>
+                onChangeText={(val) => {
+                    global.email = val;
+                } }>
                 </TextInput>
                 <Text style= {styles.text}>Password</Text>
                 <TextInput style={styles.textInput}
-                onChangeText={onChangePassword}
-                value={password}>
+                onChangeText={(val) => {
+                  global.password = val;
+                }}>
                 </TextInput>
                 <TouchableOpacity style= {styles.signButton}
-                onPress={null}>
+                onPress={() => {
+                  console.log(global.email + " " + global.password);
+                }}>
                 <Text style= {{color: 'white', fontSize: 20}}>Sign In</Text>
                 </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
             <Text style= {{color: '#7C5227', fontSize: 15, textDecoration: 'underline'}}>New here? Click here to register a new account</Text>
             </TouchableOpacity>
             </View>
             </View>
         </View>
     )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -100,4 +106,3 @@ const styles = StyleSheet.create({
       }
 });
   
-export default LoginScreen;

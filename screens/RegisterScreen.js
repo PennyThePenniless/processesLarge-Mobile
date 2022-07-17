@@ -1,30 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View } from 'react-native';
 
-const RegisterScreen = ( {navigation}) => {
-    return (
+export default class RegisterScreen extends Component {
+
+    render() {
+        return (
         <View style={styles.container}>
-      <Text style={{fontSize:30,padding:20,color:'#7C5227'}}>Recipe Research App</Text>
-        <View style={styles.register_box}>
-        <View style={{flexDirection: 'row',  alignItems:'center',justifyContent:'center'}}>
-        <Text style={{fontSize:18,color:'#7C5227'}}>Sign Up</Text>
-        </View>
-        <Text style={styles.default}>Display Name:</Text>
-        <TextInput style={styles.input}/>
-        <Text style={styles.default}>Username</Text>
-        <TextInput style={styles.input}/>
-        <Text style={styles.default}>Email</Text>
-        <TextInput style={styles.input}/>
-        <Text style={styles.default}>Password</Text>
-        <TextInput style={styles.input}/>
-        <Text style={styles.default}>Confirm Password</Text>
-        <TextInput style={styles.input}/>
-        <Button title="Sign Up"></Button>
-        <Button color='#7C5227' title="Already have an account? Click here to log in"></Button>
-        </View>
+            <Text style={{fontSize:30,padding:20,color:'#7C5227'}}>Recipe Research App</Text>
+            <View style={styles.register_box}>
+                <View style={{flexDirection: 'row',  alignItems:'center',justifyContent:'center'}}>
+                <Text style={{fontSize:18,color:'#7C5227'}}>Sign Up</Text>
+                </View>
+                <Text style={styles.default}>Display Name:</Text>
+                <TextInput style={styles.input}/>
+                <Text style={styles.default}>Username</Text>
+                <TextInput style={styles.input}/>
+                <Text style={styles.default}>Email</Text>
+                <TextInput style={styles.input}/>
+                <Text style={styles.default}>Password</Text>
+                <TextInput style={styles.input}/>
+                <Text style={styles.default}>Confirm Password</Text>
+                <TextInput style={styles.input}/>
+                <Button title="Sign Up"></Button>
+                <Button 
+                    color='#7C5227' 
+                    title="Already have an account? Click here to log in">
+                </Button>
+            </View>
       <StatusBar style="auto" />
     </View>
-    )
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -59,4 +65,3 @@ const styles = StyleSheet.create({
   }
 });
   
-export default RegisterScreen;

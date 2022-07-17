@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "mobileLarge",
-    "slug": "mobileLarge",
+    "name": "processesLarge-Mobile",
+    "slug": "processesLarge-Mobile",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "mobileLarge"
+  "name": "processesLarge-Mobile"
 }
