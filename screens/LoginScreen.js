@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
       login: {
         fontFamily: '',
         fontSize: 48,
-        fontWeight: 500,
+        fontWeight: '500',
         textAlign: 'center', 
         color: '#7C5227',
         padding: 25
