@@ -47,8 +47,6 @@ const styles = StyleSheet.create({
   	alignContent: 'center',
   	alignItems: 'center',
   	minWidth: 10,
-  	maxWidth: 'max',
-  	maxHeight: 'max',
 
   },
   input: {
