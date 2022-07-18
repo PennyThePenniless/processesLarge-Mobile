@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginRight: 220,
         fontFamily: '',
         fontSize: 18,
-        fontWeight: 600,
+        fontWeight: '600',
         color: '#7C5227',
         padding: 10
       },
