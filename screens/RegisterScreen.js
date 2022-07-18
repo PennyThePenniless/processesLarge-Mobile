@@ -22,7 +22,7 @@ export default class RegisterScreen extends Component {
                 <Text style={styles.default}>Confirm Password</Text>
                 <TextInput style={styles.input}/>
                 <Button title="Sign Up"></Button>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('LoginScreen')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             	<Text style= {{color: '#7C5227', fontSize: 15, textDecoration: 'underline'}}>Already have an account? Click here to Log in</Text>
             </TouchableOpacity>
             </View>
