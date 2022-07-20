@@ -37,7 +37,7 @@ export default class LoginScreen extends Component {
                     global.registerName = val;
                 } }>
                 </TextInput>
-                <Text style= {[styles.text, {marginRight:210}]}>User Name</Text>
+                <Text style= {[styles.text, {marginRight:200}]}>User Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isUserNameFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isUserNameFocus: true})}
                 onBlur= {() => this.setState({isUserNameFocus: false})}
@@ -45,7 +45,7 @@ export default class LoginScreen extends Component {
                   global.registerUserName = val;
                 }}>
                 </TextInput>
-                <Text style= {[styles.text, {marginRight:210}]}>Email</Text>
+                <Text style= {[styles.text, {marginRight:230}]}>Email</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isEmailFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isEmailFocus: true})}
                 onBlur= {() => this.setState({isEmailFocus: false})}
