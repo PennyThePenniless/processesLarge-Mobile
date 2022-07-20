@@ -11,13 +11,13 @@ export default class RegisterScreen extends Component {
                 <View style={{flexDirection: 'row',  alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontSize:18,color:'#7C5227'}}>Sign Up</Text>
                 </View>
-                <Text style={styles.default}>Display Name:</Text>
+                <Text style={styles.default}>First Name</Text>
                 <TextInput style={styles.input}/>
-                <Text style={styles.default}>Username</Text>
+                <Text style={styles.default}>Last Name</Text>
                 <TextInput style={styles.input}/>
-                <Text style={styles.default}>Email</Text>
+                <Text style={styles.default}>Create Username</Text>
                 <TextInput style={styles.input}/>
-                <Text style={styles.default}>Password</Text>
+                <Text style={styles.default}>Create Password</Text>
                 <TextInput style={styles.input}/>
                 <Text style={styles.default}>Confirm Password</Text>
                 <TextInput style={styles.input}/>
