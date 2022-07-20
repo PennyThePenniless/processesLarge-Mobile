@@ -29,14 +29,17 @@ const styles = StyleSheet.create({
     box1: {
         backgroundColor: 'blue',
         alignItems: 'center',
+        flex:1,
       },
     box2: {
         backgroundColor: 'red',
         alignItems: 'center',
+        flex:1,
     },
     box3: {
         backgroundColor: 'green',
         alignItems: 'center',
+        flex:1,
     }
 });
   
