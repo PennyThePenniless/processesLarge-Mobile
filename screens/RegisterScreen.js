@@ -13,7 +13,7 @@ export default class RegisterScreen extends Component {
                 </View>
                 <Text style={styles.default}>Display Name:</Text>
                 <TextInput style={styles.input}/>
-                <Text style={styles.default}>Username</Text>
+                <Text style={styles.default}>test</Text>
                 <TextInput style={styles.input}/>
                 <Text style={styles.default}>Email</Text>
                 <TextInput style={styles.input}/>
