@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
         numberOfLines: '2',
       },
       textInput: {
-        height: 40,
+        height: 50,
         width: 300,
         color: '#7C5227',
         padding: 15,
