@@ -65,7 +65,7 @@ export default class LoginScreen extends Component {
                 </TextInput>
                 <TouchableOpacity style= {styles.signButton}
                 onPress={this.handleLogin}>
-                <Text style= {{color: 'white', fontSize: 20}}>Sign In</Text>
+                <Text style= {{color: 'white', fontSize: 20}}>Sign Up</Text>
                 </TouchableOpacity>
             <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: 25, padding: 5}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
       },
       loginBox: {
         width: 450,
-        height: 480,
+        height: 700,
         borderRadius: 10,
         borderColor: '#7c5227',
         borderWidth: 1,
