@@ -48,7 +48,7 @@ export default class LoginScreen extends Component {
                 </TouchableOpacity>
             <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: 25, padding: 5}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
-            <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: 500, textDecoration: 'underline'}}>New here? Click here to register a new account</Text>
+            <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textDecoration: 'underline'}}>New here? Click here to register a new account</Text>
             </TouchableOpacity>
             </View>
             </View>
