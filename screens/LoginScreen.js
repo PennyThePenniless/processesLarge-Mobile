@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         color: '#7C5227',
         padding: 15,
         fontSize: 15,
-        fontWeight: 600,
+        fontWeight: '600',
         borderWidth: 0,
         borderRadius: 5,
       },
