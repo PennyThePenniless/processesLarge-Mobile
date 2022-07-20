@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
       },
       loginBox: {
         width: 450,
-        height: 700,
+        height: 600,
         borderRadius: 10,
         borderColor: '#7c5227',
         borderWidth: 1,
