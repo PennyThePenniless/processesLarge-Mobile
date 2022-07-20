@@ -107,6 +107,8 @@ export default class LoginScreen extends Component {
       //Send register request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+      
+      this.props.navigation.navigate('Search');
 
       
     }
