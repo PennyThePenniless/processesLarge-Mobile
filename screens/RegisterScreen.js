@@ -29,7 +29,7 @@ export default class LoginScreen extends Component {
             <ScrollView>
             <View style={{alignItems: 'center'}}>
                 <Text style={styles.login}>Sign Up</Text>
-                <Text style= {[styles.text, {marginRight:250}]}>Display Name</Text>
+                <Text style= {[styles.text, {marginRight:210}]}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isRegisterNameFocus: true})}
                 onBlur= {() => this.setState({isRegisterNameFocus: false})}
@@ -52,7 +52,6 @@ export default class LoginScreen extends Component {
                 onChangeText={(val) => {
                   global.registerEmail = val;
                 }}
-                secureTextEntry={true}>
                 </TextInput>
                 <Text style= {[styles.text, {marginRight:210}]}>Password</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
