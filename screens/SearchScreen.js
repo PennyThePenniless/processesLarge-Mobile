@@ -7,9 +7,13 @@ export default class SearchScreen extends Component {
     render() {
         return(
             <View style= {styles.mainContainer}>
-                <View style= {{margin: 50, padding: 50}}>
+                <View style={styles.box1}>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
+                </View>
+                <View style={styles.box2}>
+                </View>
+                <View style={styles.box3}>
                 </View>
             </View>
         )
@@ -22,9 +26,17 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#FEFAE0',
     },
-    box: {
-        backgroundColor: '#CCD5AE',
+    box1: {
+        backgroundColor: 'blue',
         alignItems: 'center',
-      }
+      },
+    box2: {
+        backgroundColor: 'red',
+        alignItems: 'center',
+    },
+    box3: {
+        backgroundColor: 'green',
+        alignItems: 'center',
+    }
 });
   
