@@ -182,6 +182,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 150,
         margin: 30,
+        padding: 10,
         shadowColor: 'rgba(0,0,0,0.25)',
         shadowOffset: {width: 1, height: 1},
         shadowRadius: 1
@@ -191,8 +192,6 @@ const styles = StyleSheet.create({
         margin: 5
       },
       loginBox: {
-        margin: 5,
-        marginTop: 5,
         width: 450,
         height: 480,
         borderRadius: 10,
