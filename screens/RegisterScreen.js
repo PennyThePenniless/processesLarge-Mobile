@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
       },
       container: {
         alignItems: 'center',
-        margin: 15
+        margin: 5
       },
       loginBox: {
         margin: 10,
