@@ -27,7 +27,7 @@ export default class LoginScreen extends Component {
         <View style= {styles.container}>
           <View style={styles.loginBox}>
             <ScrollView>
-            <View style={styles.loginBox}>
+            <View>
                 <Text style={styles.login}>Sign Up</Text>
                 <Text style= {[styles.text, {marginRight:250}]}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
