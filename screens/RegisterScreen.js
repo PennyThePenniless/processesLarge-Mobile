@@ -78,7 +78,7 @@ export default class LoginScreen extends Component {
   handleLogin = async () => {
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
-   //console.log(global.registerEmail.match(regex));
+    console.log(global.registerEmail.match(regex));
     //if (global.registerEmail.match(regex) == null) 
      if (global.registerName == "") {
       this.setState({message: 'Please enter a Display Name' });
@@ -88,7 +88,6 @@ export default class LoginScreen extends Component {
       this.setState({message: 'Please enter a Username.' });
       return;
     }
-    console.log(global.registerEmail.match(regex));
     else if (global.registerEmail.match(regex) == null) {
       this.setState({message: 'Please enter a valid email' });
       return;
