@@ -24,7 +24,7 @@ export default class LoginScreen extends Component {
       <View style= {styles.mainContainer}>
         <View style= {styles.container}>
             <View style= {styles.loginBox}>
-                <Text style={styles.login}>Sign In</Text>
+                <Text style={styles.login}>Sign Up</Text>
                 <Text style= {[styles.text, {marginRight:250}]}>Email</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isEmailFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isEmailFocus: true})}
