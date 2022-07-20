@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
       },
       loginBox: {
         margin: 10,
-        marginTop: 50,
+        marginTop: 20,
         width: 450,
         height: 480,
         borderRadius: 10,
