@@ -61,7 +61,7 @@ export default class LoginScreen extends Component {
     //Validate that the fields are not blank
     console.log(global.email.match(regex));
     if (global.email.match(regex) == null) {
-      this.setState({message: 'Please enter a correct email address.' });
+      this.setState({message: 'Please enter a valid email.' });
       return;
     }
     else if (global.password == "") {
@@ -70,7 +70,6 @@ export default class LoginScreen extends Component {
     }
     var obj = {email: global.email, password:global.password};
     var js = JSON.stringify(obj);
-    console.log(js);
     var res;
     try {
       //Send Login request
@@ -83,7 +82,6 @@ export default class LoginScreen extends Component {
       {
         console.log('Email and/or password entered is incorrect.');
         this.setState({message: 'Email and/or password entered is incorrect.' });
-        console.log(message)
       }
       else //Success
       {

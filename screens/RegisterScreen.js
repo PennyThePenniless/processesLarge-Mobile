@@ -25,8 +25,7 @@ export default class LoginScreen extends Component {
     return (
       <View style= {styles.mainContainer}>
         <View style= {styles.container}>
-          <View style={styles.loginBox}>
-            <ScrollView>
+          <View style={styles.registerBox}>
             <View style={{alignItems: 'center'}}>
                 <Text style={styles.login}>Sign Up</Text>
                 <Text style= {[styles.text, {marginRight:180}]}>Display Name</Text>
@@ -63,26 +62,23 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}>
                 </TextInput>
                 <TouchableOpacity style= {styles.signButton}
-                onPress={this.handleLogin}>
+                onPress={this.handleRegister}>
                 <Text style= {{color: 'white', fontSize: 20}}>Sign Up</Text>
                 </TouchableOpacity>
-            <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: 25, padding: 5}]}>{this.state.message} </Text>
+            <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: 20, padding: 5}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textDecoration: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
             </View>
-            </ScrollView>
             </View>
             </View>
         </View>
     )
   }
 
-  handleLogin = async () => {
+  handleRegister= async () => {
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
-    console.log(global.registerEmail.match(regex));
-    //if (global.registerEmail.match(regex) == null) 
      if (global.registerName == "") {
       this.setState({message: 'Please enter a display name' });
       return;
@@ -92,7 +88,7 @@ export default class LoginScreen extends Component {
       return;
     }
     else if (global.registerEmail.match(regex) == null) {
-      this.setState({message: 'Please enter a valid email' });
+      this.setState({message: 'Please enter a valid email.' });
       return;
     }
     else if (global.registerPassword == "") {
@@ -108,18 +104,16 @@ export default class LoginScreen extends Component {
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       
-      this.props.navigation.navigate('Search');
-
-      
+      res = response;
+      if(res.status == 200) { //Registration successful
+        this.props.navigation.navigate('Search');
+      }
+      else if (res.status == 409) { //something problably already exist
+        this.setState({message: 'An account with this email already exists.' });
+      }
     }
-    catch (error) { //Falls here if status code is not 200
-      if (res.status == 401) { //something problably already exist
-        this.setState({message: 'Something problably already exist' });
-      }
-      else {
-        this.setState({message: 'Something went wrong. Please try again later.'});
-      }
-
+    catch (error) { //Unexpected status code
+      this.setState({message: 'Something went wrong. Please try again later.'});
     }
   }
 }
@@ -171,7 +165,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#7c5227',
         borderRadius: 10,
         width: 150,
-        margin: 30,
+        margin: 20,
         padding: 10,
         shadowColor: 'rgba(0,0,0,0.25)',
         shadowOffset: {width: 1, height: 1},
@@ -179,11 +173,11 @@ const styles = StyleSheet.create({
       },
       container: {
         alignItems: 'center',
-        margin: 5
+        margin: 20
       },
-      loginBox: {
+      registerBox: {
         width: 450,
-        height: 500,
+        height: 650,
         borderRadius: 10,
         borderColor: '#7c5227',
         borderWidth: 1,
