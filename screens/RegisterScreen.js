@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, TextInput, View,ScrollView } from 'react-native';
 
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
 
@@ -25,7 +25,7 @@ export default class LoginScreen extends Component {
     return (
       <View style= {styles.mainContainer}>
         <View style= {styles.container}>
-            <View style= {styles.loginBox}>
+            <ScrollView style= {styles.loginBox}>
                 <Text style={styles.login}>Sign Up</Text>
                 <Text style= {[styles.text, {marginRight:250}]}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
@@ -69,7 +69,7 @@ export default class LoginScreen extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textDecoration: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
-            </View>
+            </ScrollView>
             </View>
         </View>
     )
