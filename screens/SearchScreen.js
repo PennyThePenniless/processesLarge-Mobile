@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#FEFAE0',
     },
     columnBox: {
-        flexdirection: 'column',
+        flexdirection: 'row',
         flex: 2,
     },
     box1: {
