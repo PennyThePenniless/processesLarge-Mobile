@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, TextInput, View } from 'react-native';
 
-global.email = "", global.password = "";
+global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
 
 export default class LoginScreen extends Component {
 
@@ -12,6 +12,8 @@ export default class LoginScreen extends Component {
     super()
     this.state =
     {
+      isRegisterNameFocus: false,
+      isUserNameFocus: false,
       isEmailFocus: false,
       isPasswordFocus: false,
        message: ' '
@@ -25,20 +27,37 @@ export default class LoginScreen extends Component {
         <View style= {styles.container}>
             <View style= {styles.loginBox}>
                 <Text style={styles.login}>Sign Up</Text>
-                <Text style= {[styles.text, {marginRight:250}]}>Email</Text>
+                <Text style= {[styles.text, {marginRight:250}]}>Display Name</Text>
+                <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
+                onFocus= {() => this.setState({isRegisterNameFocus: true})}
+                onBlur= {() => this.setState({isRegisterNameFocus: false})}
+                onChangeText={(val) => {
+                    global.registerName = val;
+                } }>
+                </TextInput>
+                <Text style= {[styles.text, {marginRight:210}]}>User Name</Text>
+                <TextInput style={[styles.textInput, {backgroundColor: this.state.isUserNameFocus ? '#FEFAE0' : '#9aa871'}]}
+                onFocus= {() => this.setState({isUserNameFocus: true})}
+                onBlur= {() => this.setState({isUserNameFocus: false})}
+                onChangeText={(val) => {
+                  global.registerUserName = val;
+                }}
+                </TextInput>
+                <Text style= {[styles.text, {marginRight:210}]}>Email</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isEmailFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isEmailFocus: true})}
                 onBlur= {() => this.setState({isEmailFocus: false})}
                 onChangeText={(val) => {
-                    global.email = val;
-                } }>
+                  global.registerEmail = val;
+                }}
+                secureTextEntry={true}>
                 </TextInput>
                 <Text style= {[styles.text, {marginRight:210}]}>Password</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isPasswordFocus: true})}
                 onBlur= {() => this.setState({isPasswordFocus: false})}
                 onChangeText={(val) => {
-                  global.password = val;
+                  global.registerPassword = val;
                 }}
                 secureTextEntry={true}>
                 </TextInput>
@@ -59,22 +78,32 @@ export default class LoginScreen extends Component {
   handleLogin = async () => {
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
-    console.log(global.email.match(regex));
-    if (global.email.match(regex) == null) {
-      this.setState({message: 'Please enter a correct email address.' });
+   //console.log(global.registerEmail.match(regex));
+    //if (global.registerEmail.match(regex) == null) 
+     if (global.registerName == "") {
+      this.setState({message: 'Please enter a Display Name' });
       return;
     }
-    else if (global.password == "") {
+    else if (global.registerUserName == "") {
+      this.setState({message: 'Please enter a Username.' });
+      return;
+    }
+    console.log(global.registerEmail.match(regex));
+    else if (global.registerEmail.match(regex) == null) {
+      this.setState({message: 'Please enter a valid email' });
+      return;
+    }
+    else if (global.registerPassword == "") {
       this.setState({message: 'Please enter a password.' });
       return;
     }
-    var obj = {email: global.email, password:global.password};
+    var obj = {username: global.registerUserName, displayName: global.registerName, password: global.registerPassword, email: global.registerEmail};
     var js = JSON.stringify(obj);
     console.log(js);
     var res;
     try {
       //Send Login request
-      const response = await fetch('https://processes-recipe.herokuapp.com/user/login',
+      const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
       res = response;
