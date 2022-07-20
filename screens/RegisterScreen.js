@@ -25,7 +25,8 @@ export default class LoginScreen extends Component {
     return (
       <View style= {styles.mainContainer}>
         <View style= {styles.container}>
-            <ScrollView style= {styles.loginBox}>
+          <View style= {styles.loginBox}>
+            <ScrollView>
                 <Text style={styles.login}>Sign Up</Text>
                 <Text style= {[styles.text, {marginRight:250}]}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
@@ -70,6 +71,7 @@ export default class LoginScreen extends Component {
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textDecoration: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
             </ScrollView>
+            </View>
             </View>
         </View>
     )
