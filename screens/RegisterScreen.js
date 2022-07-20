@@ -84,11 +84,11 @@ export default class LoginScreen extends Component {
     console.log(global.registerEmail.match(regex));
     //if (global.registerEmail.match(regex) == null) 
      if (global.registerName == "") {
-      this.setState({message: 'Please enter a Display Name' });
+      this.setState({message: 'Please enter a display name' });
       return;
     }
     else if (global.registerUserName == "") {
-      this.setState({message: 'Please enter a Username.' });
+      this.setState({message: 'Please enter a username.' });
       return;
     }
     else if (global.registerEmail.match(regex) == null) {
@@ -104,30 +104,15 @@ export default class LoginScreen extends Component {
     console.log(js);
     var res;
     try {
-      //Send Login request
+      //Send register request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
-      res = response;
-      var _results = JSON.parse(await res.text());
-      if( res.status != 200 )
-      {
-        console.log('Email and/or password entered is incorrect.');
-        this.setState({message: 'Email and/or password entered is incorrect.' });
-        console.log(message)
-      }
-      else //Success
-      {
-        /*global.firstName = res.firstName;
-        global.lastName = res.lastName;
-        global.userId = res.id;*/
-        this.props.navigation.navigate('Search');
-
-      }
+      
     }
     catch (error) { //Falls here if status code is not 200
-      if (res.status == 401) { //Incorrect credentials
-        this.setState({message: 'Email and/or password entered is incorrect.' });
+      if (res.status == 401) { //something problably already exist
+        this.setState({message: 'Something problably already exist' });
       }
       else {
         this.setState({message: 'Something went wrong. Please try again later.'});
