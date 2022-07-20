@@ -51,7 +51,7 @@ export default class LoginScreen extends Component {
                 onBlur= {() => this.setState({isEmailFocus: false})}
                 onChangeText={(val) => {
                   global.registerEmail = val;
-                }}
+                }}>
                 </TextInput>
                 <Text style= {[styles.text, {marginRight:210}]}>Password</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
