@@ -140,21 +140,21 @@ const styles = StyleSheet.create({
       backgroundColor: '#FEFAE0',
     },
     title: {
-        fontFamily: '',
+        //fontFamily: '',
         fontSize: 64,
         textAlign: 'center',
         color: '#7C5227',
         padding: 10,
       },
       login: {
-        fontFamily: '',
+        //fontFamily: '',
         fontSize: 48,
         fontWeight: '500',
         color: '#7C5227',
         padding: 25
       },
       text: {
-        fontFamily: '',
+        //fontFamily: '',
         fontSize: 18,
         fontWeight: '600',
         color: '#7C5227',
