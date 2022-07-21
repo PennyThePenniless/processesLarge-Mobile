@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     box2: {
         backgroundColor: 'red',
         alignItems: 'center',
-        flex:1,
+        flex:3,
     },
     box3: {
         backgroundColor: 'green',
