@@ -15,9 +15,11 @@ export default class SearchScreen extends Component {
                 <View style={styles.columnBox}>
                 <View style={styles.box2}>
                 </View>
-                <ScrollView style={styles.box3}>
-                    <Text>test</Text>
-                </ScrollView>
+                <View style={styles.box3}>
+                    <ScrollView>
+                        <Text>test</Text>
+                    </ScrollView>
+                </View>
                 </View>
             </View>
         )
