@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
     },
     columnBox: {
-        //flexDirection: 'row',
+        flexDirection: 'row',
         flex: 5,
         paddingTop: 25,
         justifyContent: 'space-inbetween',
@@ -43,11 +43,13 @@ const styles = StyleSheet.create({
     box2: {
         backgroundColor: 'red',
         alignItems: 'center',
+        flex: 1,
         
     },
     box3: {
         backgroundColor: 'green',
         alignItems: 'center',
+        flex: 3,
         
     }
 });
