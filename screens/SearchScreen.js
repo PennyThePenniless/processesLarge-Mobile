@@ -34,13 +34,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 5,
         paddingTop: 25,
-        justifyContent: 'space-around',
+        
     },
     box1: {
         backgroundColor: 'blue',
         alignItems: 'center',
         flex:1,
         flexDirection: 'row',
+        justifyContent: 'space-around',
        
       },
     box2: {
