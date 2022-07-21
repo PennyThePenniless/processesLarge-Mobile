@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
     },
     columnBox: {
-        flexdirection: 'row',
+        flexDirection: 'row',
         flex: 1,
     },
     box1: {
