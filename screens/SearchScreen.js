@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         borderWidth: 0,
         borderRadius: 5,
+        backgroundColor: 'white',
       },
 });
   
