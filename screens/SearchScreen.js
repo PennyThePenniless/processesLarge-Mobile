@@ -8,7 +8,7 @@ export default class SearchScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
-                <TextInput></TextInput>
+                <TextInput style={{backgroundColor: 'green'}}></TextInput>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
