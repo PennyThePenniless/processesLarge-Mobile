@@ -16,6 +16,7 @@ export default class SearchScreen extends Component {
                 <View style={styles.box2}>
                 </View>
                 <View style={styles.box3}>
+                    <Text>Test</Text>
                 </View>
                 </View>
             </View>
