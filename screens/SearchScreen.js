@@ -43,13 +43,12 @@ const styles = StyleSheet.create({
     box2: {
         backgroundColor: 'red',
         alignItems: 'center',
-        flex:1,
+        
     },
     box3: {
         backgroundColor: 'green',
         alignItems: 'center',
-        flex:3,
-        paddingLeft: 15,
+        
     }
 });
   
