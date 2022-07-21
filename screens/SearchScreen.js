@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       },
     foodBox: {
         width: 600,
-        backgroundColor: 'white',
+        backgroundColor: 'purple',
     }
 
 });
