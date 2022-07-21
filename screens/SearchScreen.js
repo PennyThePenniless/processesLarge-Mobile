@@ -11,9 +11,11 @@ export default class SearchScreen extends Component {
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
+                <View style={styles.columnBox}>
                 <View style={styles.box2}>
                 </View>
                 <View style={styles.box3}>
+                </View>
                 </View>
             </View>
         )
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
     },
     columnBox: {
         flexdirection: 'row',
-        flex: 2,
+        flex: 1,
     },
     box1: {
         backgroundColor: 'blue',
