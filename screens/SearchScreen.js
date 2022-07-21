@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     columnBox: {
         flexDirection: 'row',
         flex: 5,
-        paddingTop: 50,
+        paddingTop: 25,
     },
     box1: {
         backgroundColor: 'blue',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'green',
         alignItems: 'center',
         flex:3,
-        paddingTop: 50,
+        paddingLeft: 15,
     }
 });
   
