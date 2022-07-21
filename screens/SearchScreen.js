@@ -8,6 +8,7 @@ export default class SearchScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
+                <TextInput></TextInput>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         alignItems: 'center',
         flex:1,
+        flexDirection: 'row;,
       },
     box2: {
         backgroundColor: 'red',
