@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
     },
     columnBox: {
-        flexDirection: 'row',
+        //flexDirection: 'row',
         flex: 5,
         paddingTop: 25,
         justifyContent: 'space-inbetween',
