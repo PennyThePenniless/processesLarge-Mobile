@@ -7,7 +7,6 @@ export default class SearchScreen extends Component {
     render() {
         return(
             <View style= {styles.mainContainer}>
-            <View style={styles.columnBox}>
                 <View style={styles.box1}>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
@@ -15,7 +14,6 @@ export default class SearchScreen extends Component {
                 <View style={styles.box2}>
                 </View>
                 <View style={styles.box3}>
-                </View>
                 </View>
             </View>
         )
