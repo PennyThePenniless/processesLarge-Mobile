@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 5,
         paddingTop: 25,
+        justifyContent: 'space-inbetween',
     },
     box1: {
         backgroundColor: 'blue',
