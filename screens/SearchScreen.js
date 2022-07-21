@@ -17,7 +17,7 @@ export default class SearchScreen extends Component {
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
-                        <Text>test</Text>
+                        <Text style={styles.foodBox}>test</Text>
                     </ScrollView>
                 </View>
                 </View>
@@ -70,9 +70,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
       },
     foodBox: {
-        width: 600,
         backgroundColor: 'purple',
-        flex: 1,
+        
     }
 
 });
