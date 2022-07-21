@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     },
     box3: {
         backgroundColor: 'green',
-        alignItems: 'center',
         flex: 3,
         
     },
