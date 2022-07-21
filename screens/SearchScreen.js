@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     foodBox: {
         width: 600,
         backgroundColor: 'purple',
+        flex: 1,
     }
 
 });
