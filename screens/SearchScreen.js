@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         alignItems: 'center',
         flex:1,
-        flexDirection: 'row;,
+        flexDirection: 'row',
+       
       },
     box2: {
         backgroundColor: 'red',
