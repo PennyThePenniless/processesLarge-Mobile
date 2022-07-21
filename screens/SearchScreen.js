@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
         
     },
     textInput: {
-        height: 30,
+        height: 40,
         width: 300,
         color: '#7C5227',
         padding: 15,
-        fontSize: 5,
+        fontSize: 15,
         fontWeight: '600',
         borderWidth: 0,
         borderRadius: 5,
