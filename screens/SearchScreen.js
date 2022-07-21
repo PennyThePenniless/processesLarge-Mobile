@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     },
     columnBox: {
         flexDirection: 'row',
-        flex: 2,
+        flex: 5,
     },
     box1: {
         backgroundColor: 'blue',
