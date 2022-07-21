@@ -8,7 +8,7 @@ export default class SearchScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
-                <TextInput style={styles.textInput}></TextInput>
+                <TextInput style={styles.textInput} placeholder="Search"></TextInput>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         
     },
     textInput: {
-        height: 50,
+        height: 30,
         width: 300,
         color: '#7C5227',
         padding: 15,
