@@ -9,17 +9,12 @@ export default class FoodScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.rowBox}>
-                <View style={styles.box2}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
-                        <Text>Go Back</Text>
-                    </TouchableOpacity>
-                    <View style={styles.picture}>
-                        <Text>Image</Text>
-                        </View>
-                </View>
                 <View style={styles.box3}>
                     <ScrollView>
-                       
+                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
+                            <Text>Go Back</Text>
+                        </TouchableOpacity>
+                        
                     </ScrollView>
                 </View>
                 </View>
