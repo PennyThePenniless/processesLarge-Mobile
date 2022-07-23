@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'purple',
         height: 120,
         flexDirection: 'row',
-        padding: 15,
+        padding: 5,
         },
     picture: {
         flex: 1,
