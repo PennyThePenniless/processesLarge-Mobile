@@ -20,16 +20,25 @@ export default class SearchScreen extends Component {
                 <View style={styles.box3}>
                     <ScrollView>
                         <View style={styles.foodBox}>
-                        <View style={styles.picture}></View>
-                        <View style={{flex:1}}>
-                        <View style={styles.foodName}></View>
-                        <View style={styles.info}></View>
-                        </View>
-                        <View style={{flex:1}}>
-                        <View style={styles.cookTime}></View>
-                        <View style={styles.rating}></View>
-                        </View>
-                        
+                            <View style={styles.picture}>
+                                <Text>[Image]</Text>
+                             </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.foodName}>
+                                    <Text>Food Name</Text>
+                                </View>
+                                <View style={styles.info}>
+                                    <Text>3/3 ingredients</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.cookTime}>
+                                    <Text>1 hour</Text>
+                                </View>
+                                <View style={styles.rating}>
+                                    <Text>5 stars</Text>
+                                </View>
+                            </View>
                         </View>
                     </ScrollView>
                 </View>
