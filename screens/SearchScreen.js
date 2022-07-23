@@ -19,7 +19,7 @@ export default class SearchScreen extends Component {
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
-                        <View style={styles.foodBox}>
+                        <TouchableOpacity style={styles.foodBox} onPress={}>
                             <View style={styles.picture}>
                                 <Text>[Image]</Text>
                              </View>
@@ -39,7 +39,7 @@ export default class SearchScreen extends Component {
                                     <Text>5 stars</Text>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.foodBox}>
                             <View style={styles.picture}>
                                 <Text>[Image]</Text>
