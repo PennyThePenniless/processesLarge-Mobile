@@ -12,7 +12,7 @@ export default class SearchScreen extends Component {
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
-                <View style={styles.columnBox}>
+                <View style={styles.rowBox}>
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
                     <Text>Exclude:</Text>
@@ -20,7 +20,16 @@ export default class SearchScreen extends Component {
                 <View style={styles.box3}>
                     <ScrollView>
                         <View style={styles.foodBox}>
-                        <Text>test</Text>
+                        <View style={styles.picture}></View>
+                        <View style={{flex:1}}>
+                        <View style={styles.foodName}></View>
+                        <View style={styles.info}></View>
+                        </View>
+                        <View style={{flex:1}}>
+                        <View style={styles.cookTime}></View>
+                        <View style={styles.rating}></View>
+                        </View>
+                        
                         </View>
                     </ScrollView>
                 </View>
@@ -37,7 +46,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#FEFAE0',
       flexDirection: 'column',
     },
-    columnBox: {
+    rowBox: {
         flexDirection: 'row',
         flex: 5,
         paddingTop: 25,
@@ -76,8 +85,32 @@ const styles = StyleSheet.create({
     foodBox: {
         backgroundColor: 'purple',
         height: 120,
+        },
+    picture: {
+        flex: 1,
+        backgroundColor: 'pink'
+    },
+    foodName: {
+        flex: 1,
+        backgroundColor: 'white',
         
+    },
+    info {
+       flex: 1,
+    backgroundColor: 'blue'
+    },
+    cookTime{
+        flex: 1,
+        backgroundColor: 'yellow'
+        },
+    rating: {
+        flex: 1,
+        backgroundColor: 'brown'
     }
+    row: {
+        flexDirection: 'row'
+    }
+    
 
 });
   
