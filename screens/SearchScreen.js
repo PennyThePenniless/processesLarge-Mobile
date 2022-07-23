@@ -8,7 +8,7 @@ export default class SearchScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
-                <TextInput style={styles.textInput} placeholder="Search for recipes by ingredients"></TextInput>
+                <TextInput style={styles.textInput} placeholder="Maria eats ass"></TextInput>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
