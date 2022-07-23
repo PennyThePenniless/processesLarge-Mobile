@@ -1,6 +1,6 @@
 
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity } from 'react-native';
 
 
 export default class FoodScreen extends Component {
@@ -8,14 +8,9 @@ export default class FoodScreen extends Component {
     render() {
         return(
             <View style= {styles.mainContainer}>
-                <View style={styles.box1}>
-                <TextInput style={styles.textInput} placeholder="Search for recipes by ingredients"></TextInput>
-                <Button onPress={() => this.props.navigation.navigate('Login')}
-                title= "Logout"></Button>
-                </View>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
-                    <Text>Ingredients</Text>
+                    <TouchableOpacity><</TouchableOpacity>
                     <Text>Exclude:</Text>
                 </View>
                 <View style={styles.box3}>
