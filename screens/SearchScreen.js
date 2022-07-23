@@ -95,18 +95,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         
     },
-    info {
+    info: {
        flex: 1,
     backgroundColor: 'blue'
     },
-    cookTime{
+    cookTime:{
         flex: 1,
         backgroundColor: 'yellow'
         },
     rating: {
         flex: 1,
         backgroundColor: 'brown'
-    }
+    },
     row: {
         flexDirection: 'row'
     }
