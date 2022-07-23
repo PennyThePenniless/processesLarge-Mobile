@@ -10,7 +10,7 @@ export default class FoodScreen extends Component {
             <View style= {styles.mainContainer}>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
-                    <TouchableOpacity><</TouchableOpacity>
+                    <TouchableOpacity>Go back</TouchableOpacity>
                     <Text>Exclude:</Text>
                 </View>
                 <View style={styles.box3}>
