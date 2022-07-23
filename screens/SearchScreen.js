@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     foodBox: {
         backgroundColor: 'purple',
         height: 120,
-        flexDirection, 'row'
+        flexDirection: 'row'
         },
     picture: {
         flex: 1,
