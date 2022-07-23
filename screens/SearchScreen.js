@@ -19,7 +19,7 @@ export default class SearchScreen extends Component {
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
-                        <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Login')}>
+                        <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Food')}>
                             <View style={styles.picture}>
                                 <Text>[Image]</Text>
                              </View>
