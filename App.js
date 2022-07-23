@@ -33,6 +33,13 @@ const AppNavigator = createStackNavigator({
       headerShown: false, // Will hide header for HomePage
       animationEnabled: false
     }
+  },
+  Food: {
+    screen: FoodScreen,
+    navigationOptions: {
+      headerShown: false, // Will hide header for HomePage
+      animationEnabled: false
+    }
   }
 },{
   initialRouteName: "Login"
