@@ -5,6 +5,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import SearchScreen from './screens/SearchScreen';
 import FoodScreen from './screens/FoodScreen';
+import HomeScreen from './screens/HomeScreen';
 
 export default class App extends React.Component {
   
@@ -14,6 +15,13 @@ export default class App extends React.Component {
 }
 
 const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      headerShown: false, // Will hide header for HomePage
+      animationEnabled: false,
+    }
+  },
   Login: {
     screen: LoginScreen,
     navigationOptions: {
@@ -44,7 +52,7 @@ const AppNavigator = createStackNavigator({
   },
   
 },{
-  initialRouteName: "Login"
+  initialRouteName: "Home"
 });
 
 const AppContainer = createAppContainer(AppNavigator);
