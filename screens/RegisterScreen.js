@@ -1,11 +1,9 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View,ScrollView } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView } from 'react-native';
 
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
 
 export default class LoginScreen extends Component {
-
-
 
   constructor()
   {
@@ -24,11 +22,12 @@ export default class LoginScreen extends Component {
 
     return (
       <View style= {styles.mainContainer}>
+        <ScrollView>
         <View style= {styles.container}>
           <View style={styles.registerBox}>
-            <View style={{alignItems: 'center'}}>
                 <Text style={styles.login}>Sign Up</Text>
-                <Text style= {[styles.text, {marginRight:180}]}>Display Name</Text>
+                <View style={{margin: '5%'}}>
+                <Text style= {styles.text}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isRegisterNameFocus: true})}
                 onBlur= {() => this.setState({isRegisterNameFocus: false})}
@@ -36,7 +35,7 @@ export default class LoginScreen extends Component {
                     global.registerName = val;
                 } }>
                 </TextInput>
-                <Text style= {[styles.text, {marginRight:210}]}>User Name</Text>
+                <Text style= {styles.text}>User Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isUserNameFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isUserNameFocus: true})}
                 onBlur= {() => this.setState({isUserNameFocus: false})}
@@ -44,7 +43,7 @@ export default class LoginScreen extends Component {
                   global.registerUserName = val;
                 }}>
                 </TextInput>
-                <Text style= {[styles.text, {marginRight:250}]}>Email</Text>
+                <Text style= {styles.text}>Email</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isEmailFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isEmailFocus: true})}
                 onBlur= {() => this.setState({isEmailFocus: false})}
@@ -52,7 +51,7 @@ export default class LoginScreen extends Component {
                   global.registerEmail = val;
                 }}>
                 </TextInput>
-                <Text style= {[styles.text, {marginRight:210}]}>Password</Text>
+                <Text style= {[styles.text, {marginRight:'60%'}]}>Password</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isPasswordFocus: true})}
                 onBlur= {() => this.setState({isPasswordFocus: false})}
@@ -61,17 +60,20 @@ export default class LoginScreen extends Component {
                 }}
                 secureTextEntry={true}>
                 </TextInput>
+                <View style= {{alignItems: 'center'}}>
                 <TouchableOpacity style= {styles.signButton}
                 onPress={this.handleRegister}>
-                <Text style= {{color: 'white', fontSize: 20}}>Sign Up</Text>
+                <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
                 </TouchableOpacity>
-            <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: 20, padding: 5}]}>{this.state.message} </Text>
+                </View>
+            <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, marginBottom: '2%', flexWrap: 'wrap'}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-            <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textDecoration: 'underline'}}>Already have a account? Click here to log in</Text>
+            <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500',textAlign: 'center', margin: '5%', textDecorationLine: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
             </View>
             </View>
             </View>
+            </ScrollView>
         </View>
     )
   }
@@ -103,7 +105,6 @@ export default class LoginScreen extends Component {
       //Send register request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
-      
       res = response;
       if(res.status == 200) { //Registration successful
         this.props.navigation.navigate('Search');
@@ -118,75 +119,86 @@ export default class LoginScreen extends Component {
   }
 }
 
+function getWidth() {
+  if (Dimensions.get('window').width > Dimensions.get('window').height) {
+      return Dimensions.get('window').width;
+  }
+  else {
+      return Dimensions.get('window').height;
+  }
+}
+
+function getHeight() {
+  if (Dimensions.get('window').height > Dimensions.get('window').width) {
+    return Dimensions.get('window').height;
+  }
+  else {
+      return Dimensions.get('window').width;
+  }
+}
+
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
       backgroundColor: '#FEFAE0',
     },
-    title: {
-        //fontFamily: '',
-        fontSize: 64,
-        textAlign: 'center',
-        color: '#7C5227',
-        padding: 10,
-      },
       login: {
         //fontFamily: '',
-        fontSize: 48,
+        fontSize: 54,
+        textAlign: 'center',
         fontWeight: '500',
         color: '#7C5227',
-        padding: 25
+        margin: '5%'
       },
       text: {
         //fontFamily: '',
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: '600',
         color: '#7C5227',
-        padding: 10,
-        flexWrap: 'wrap',
-        numberOfLines: '2',
+        padding: 5,
+        flexWrap: 'wrap'
       },
       textInput: {
-        height: 50,
-        width: 300,
+        height: '8%',
+        margin: '1%',
+        padding: '3%',
         color: '#7C5227',
-        padding: 15,
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: '600',
         borderWidth: 0,
         borderRadius: 5,
-      },
-      onFocusText: {
-        backgroundColor: '#FEFAE0',
-        color: '7C5227'
+        alignItems: 'stretch'
       },
       signButton: {
-        alignItems: 'center',
         backgroundColor: '#7c5227',
         borderRadius: 10,
-        width: 150,
+        width: '40%',
+        padding:10,
         margin: 20,
-        padding: 10,
         shadowColor: 'rgba(0,0,0,0.25)',
-        shadowOffset: {width: 1, height: 1},
+        shadowOffset: {width: -1, height: -1},
         shadowRadius: 1
       },
       container: {
+        flex: 1,
+        flexDirection: "row",
         alignItems: 'center',
-        margin: 20
+        justifyContent: 'center',
+        margin: '3%'
       },
       registerBox: {
-        width: 450,
-        height: 650,
-        borderRadius: 10,
+        flex: 1,
+        marginTop: getWidth() * 0.1,
+        width: getWidth(),
+        height: getHeight(),
+        borderRadius: 10, 
         borderColor: '#7c5227',
-        borderWidth: 1,
+        borderWidth: 0.4,
         backgroundColor: '#CCD5AE',
-        alignItems: 'center',
         shadowColor: 'rgba(0,0,0,0.25)',
-        shadowOffset: {width: 2, height: 2},
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 1,
-        shadowRadius: 2
+        shadowRadius: 1
       }
 });
   
