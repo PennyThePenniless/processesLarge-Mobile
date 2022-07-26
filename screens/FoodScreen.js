@@ -8,13 +8,81 @@ export default class FoodScreen extends Component {
     render() {
         return(
             <View style= {styles.mainContainer}>
+                <View style={styles.box1}>
+                <TextInput style={styles.textInput} placeholder="Search for recipes by ingredients"></TextInput>
+                <Button onPress={() => this.props.navigation.navigate('Login')}
+                title= "Logout"></Button>
+                </View>
                 <View style={styles.rowBox}>
+                <View style={styles.box2}>
+                    <Text>Ingredients</Text>
+                    <Text>Exclude:</Text>
+                </View>
                 <View style={styles.box3}>
                     <ScrollView>
-                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
-                            <Text>Go Back</Text>
+                        <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Food')}>
+                            <View style={styles.picture}>
+                                <Text>[Image]</Text>
+                             </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.foodName}>
+                                    <Text>Food Name</Text>
+                                </View>
+                                <View style={styles.info}>
+                                    <Text>3/3 ingredients</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.cookTime}>
+                                    <Text>1 hour</Text>
+                                </View>
+                                <View style={styles.rating}>
+                                    <Text>5 stars</Text>
+                                </View>
+                            </View>
                         </TouchableOpacity>
-                        
+                        <View style={styles.foodBox}>
+                            <View style={styles.picture}>
+                                <Text>[Image]</Text>
+                             </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.foodName}>
+                                    <Text>Food Name</Text>
+                                </View>
+                                <View style={styles.info}>
+                                    <Text>3/3 ingredients</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.cookTime}>
+                                    <Text>1 hour</Text>
+                                </View>
+                                <View style={styles.rating}>
+                                    <Text>5 stars</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.foodBox}>
+                            <View style={styles.picture}>
+                                <Text>[Image]</Text>
+                             </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.foodName}>
+                                    <Text>Food Name</Text>
+                                </View>
+                                <View style={styles.info}>
+                                    <Text>3/3 ingredients</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1}}>
+                                <View style={styles.cookTime}>
+                                    <Text>1 hour</Text>
+                                </View>
+                                <View style={styles.rating}>
+                                    <Text>5 stars</Text>
+                                </View>
+                            </View>
+                        </View>
                     </ScrollView>
                 </View>
                 </View>
