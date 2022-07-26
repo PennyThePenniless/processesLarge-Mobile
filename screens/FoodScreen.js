@@ -13,6 +13,7 @@ export default class FoodScreen extends Component {
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <View style={styles.picture}>
+                        <Text>[Image]</Text>
                     </View>
                     <Text style={{flex: 1}}>Food Name</Text>
                     <Text style={{flex: 1}}>rating</Text>
