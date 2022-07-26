@@ -10,10 +10,12 @@ export default class FoodScreen extends Component {
             <View style= {styles.mainContainer}>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
-                    <Button onPress={() => this.props.navigation.navigate('Login')}
+                    <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
-                    <Text>Ingredients</Text>
-                    <Text>Exclude:</Text>
+                    <Text style={{flex: 1}}>Food Name</Text>
+                    <Text style={{flex: 1}}>rating</Text>
+                    <Text style={{flex: 1}}>You made this recipe</Text>
+                    <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
