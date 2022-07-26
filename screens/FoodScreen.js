@@ -22,6 +22,30 @@ export default class FoodScreen extends Component {
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
+                        <View style={styles.nutrition}>
+                             <Text>Nutrition</Text>
+                        </View>
+                        <View style={styles.recipe}>
+                             <Text>Recipe</Text>
+                        </View>
+                        <View style={styles.row}>
+                             <View style={styles.prepTime}>
+                                <Text>prep time:</Text>
+                            </View>
+                            <View style={styles.cookTime}>
+                                <Text>cook time:</Text>
+                            </View>
+                        </View>
+                        <View style={styles.ingredients}>
+                            <Text>ingredients</Text>
+                        </View>
+                        <View style={styles.instructions}>
+                           <Text>instructions</Text>
+                        </View>
+                        <View style={styles.userCreations}>
+                                <Text>User Creations</Text>
+                         </View>
+                    
                        
                     </ScrollView>
                 </View>
@@ -103,7 +127,35 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row'
-    }
+    },
+    nutrition: {
+        flex: 1,
+        backgroundColor: 'yellow'
+    },
+    recipe: {
+        flex: 1,
+        backgroundColor: 'blue'
+    },
+    ingredients: {
+        flex: 1,
+        backgroundColor: 'purple'
+    },
+    instructions: {
+        flex: 1,
+        backgroundColor: 'brown'
+    },
+    userCreations: {
+        flex: 1,
+        backgroundColor: 'white'
+    },
+    prepTime: {
+        flex: 1,
+        backgroundColor: 'red'
+    },
+    cookTime: {
+        flex: 1,
+        backgroundColor: 'pink'
+    },
     
 
 });
