@@ -7,6 +7,8 @@ import SearchScreen from './screens/SearchScreen';
 import FoodScreen from './screens/FoodScreen';
 import HomeScreen from './screens/HomeScreen';
 import ForgotScreen from './screens/ForgotScreen';
+import AccountScreen from './screens/AccountScreen';
+import AccountListScreen from './screens/AccountListScreen';
 
 export default class App extends React.Component {
   
@@ -55,6 +57,20 @@ const AppNavigator = createStackNavigator({
     navigationOptions: {
       headerShown: false, // Will hide header for HomePage
       animationEnabled: false
+    }
+  },
+  Account: {
+    screen: AccountScreen,
+    navigationOptions: {
+      headerShown: false,
+      animationEnabled: false
+    }
+  },
+  AccountList: {
+    screen: AccountListScreen,
+    navigationOptions: {
+      headerShown:false,
+      animationEnabled: true
     }
   },
   Food: {
