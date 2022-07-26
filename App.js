@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import SearchScreen from './screens/SearchScreen';
 import FoodScreen from './screens/FoodScreen';
 import HomeScreen from './screens/HomeScreen';
+import ForgotScreen from './screens/ForgotScreen';
 
 export default class App extends React.Component {
   
@@ -27,13 +28,26 @@ const AppNavigator = createStackNavigator({
     navigationOptions: {
       headerShown: false, // Will hide header for HomePage
       animationEnabled: false,
+      detachInactiveScreen: true,
+      detachPreviousScreen: true
     }
   },
   Register: {
     screen: RegisterScreen,
     navigationOptions: {
       headerShown: false, // Will hide header for HomePage
-      animationEnabled: false
+      animationEnabled: false,
+      detachInactiveScreen: true,
+      detachPreviousScreen: true
+    }
+  },
+  Forgot: {
+    screen: ForgotScreen,
+    navigationOptions: {
+      headerShown: false, // Will hide header for HomePage
+      animationEnabled: true,
+      detachInactiveScreen: true,
+      detachPreviousScreen: true
     }
   },
   Search: {

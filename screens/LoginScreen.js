@@ -41,7 +41,7 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}>
                 </TextInput>
                 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Forgot')}>
                 <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500', textAlign: 'right', margin: '1%'}}>Forgot Password?</Text>
                 </TouchableOpacity>
                 <View style= {{alignItems: 'center'}}>
@@ -104,7 +104,7 @@ export default class LoginScreen extends Component {
         this.setState({message: 'Email and/or password entered is incorrect' });
       }
       else {
-        this.setState({message: 'Something went wrong. Please try again later'});
+        this.setState({message: 'Something went wrong. Please try again later.'});
       }
       
     }
