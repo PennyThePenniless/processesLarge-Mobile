@@ -8,13 +8,10 @@ export default class FoodScreen extends Component {
     render() {
         return(
             <View style= {styles.mainContainer}>
-                <View style={styles.box1}>
-                <TextInput style={styles.textInput} placeholder="Search for recipes by ingredients"></TextInput>
-                <Button onPress={() => this.props.navigation.navigate('Login')}
-                title= "Logout"></Button>
-                </View>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
+                    <Button onPress={() => this.props.navigation.navigate('Login')}
+                    title= "Go back"></Button>
                     <Text>Ingredients</Text>
                     <Text>Exclude:</Text>
                 </View>
