@@ -12,6 +12,8 @@ export default class FoodScreen extends Component {
                 <View style={styles.box2}>
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
+                    <View style={styles.picture}>
+                    </View>
                     <Text style={{flex: 1}}>Food Name</Text>
                     <Text style={{flex: 1}}>rating</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
