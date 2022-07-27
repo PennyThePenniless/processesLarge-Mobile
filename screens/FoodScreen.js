@@ -66,19 +66,14 @@ constructor()
                                <Text>[Image]</Text>
                     </View>
                         </View>
-                        <View style={styles.recipe}>
-                             <Text style={{textAlign: 'center'}}>Recipe</Text>
-                        </View>
-                        
-                        <View style={styles.ingredients}>
+                       <View style={styles.ingredients}>
                             <Text>Ingredients:</Text>
                             <FlatList
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
-            </View>
-                       
-                        <View style={styles.instruction)>
+                        </View>
+                        <View style={styles.instructions}>
                             <Text>Instructions:</Text>
                            <Text>{object.instructions}</Text>
                         </View>
