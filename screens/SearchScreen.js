@@ -11,7 +11,7 @@ global.strInput = "", global.setInput = "";
 
 
 // temporary just to test the ingredients tab to the left of the screen
-global.ingredients = ["Egg", "Milk", "Flour"];
+const ingredients = ["Egg", "Milk", "Flour"];
 
 
 export default class SearchScreen extends Component {
