@@ -104,7 +104,7 @@ export default class LoginScreen extends Component {
         this.setState({message: 'Email and/or password entered is incorrect' });
       }
       else {
-        this.setState({message: 'something went wrong');
+        this.setState({message: 'something went wrong'});
       }
       
     }
