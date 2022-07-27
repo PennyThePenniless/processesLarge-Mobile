@@ -1,13 +1,21 @@
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList } from 'react-native';
+
+//Havent gotten around to implementing these, would problably be overkill
 import {RegularList} from "../assets/Regularlist.js";
 import {Ingredient} from "../assets/Ingredients.js";
 
+
 global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
-const ingredients = ["Egg", "Milk", "Flour"];
+
+
+// temporary just to test the ingredients tab to the left of the screen
+global.ingredients = ["Egg", "Milk", "Flour"];
+
+
 export default class SearchScreen extends Component {
-   
+   //jsonArr to be sent to API
     handleSearch = (event) => {
 
        /* event.preventDefault();
@@ -90,6 +98,7 @@ getSearchResults = () => {
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
+                     // Was trying to show the ingredients list here, couldnt get it to work yet
                      <FlatList
                        data={ingredients}
                       />
