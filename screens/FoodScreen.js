@@ -76,8 +76,9 @@ constructor()
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
+            </View>
                        
-                        
+                        <View style={styles.instruction)>
                             <Text>Instructions:</Text>
                            <Text>{object.instructions}</Text>
                         </View>
