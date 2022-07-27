@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
-import {Regularlist} from "../assets/Regularlist.js";
+import {RegularList} from "../assets/Regularlist.js";
 
 global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
