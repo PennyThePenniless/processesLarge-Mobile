@@ -1,6 +1,6 @@
 
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Script } from 'react-native';
 global.object = {title: 'test',spoonacularID:' ',instructions: ' ',recipePhoto: ' ',ingredients: [],numMade: 0,
     numRatings: 0,
     numSaved: 0,
@@ -28,7 +28,9 @@ export default class FoodScreen extends Component {
 
     render() {
         return(
+            <Script>
             global.object = getRecipe();
+            </Script>
             <View style= {styles.mainContainer}>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
