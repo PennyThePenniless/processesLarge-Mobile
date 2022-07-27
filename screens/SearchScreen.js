@@ -4,14 +4,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
 export default class SearchScreen extends Component {
-    constructor() 
-  {
-    super()
-    this.state = 
-    {
-      
-    }
-  }
+   
     handleSearch = (event) => {
 
        /* event.preventDefault();
