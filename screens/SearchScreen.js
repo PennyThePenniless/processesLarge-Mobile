@@ -1,8 +1,19 @@
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
 
-
+global.showResults = false, global.setShowResults = false;
+global.strInput = "", global.setInput = "";
 export default class SearchScreen extends Component {
+    constructor() 
+  {
+    super()
+    this.state = 
+    {
+      isEmailFocus: false,
+      isPasswordFocus: false,
+       message: ' '
+    }
+  }
     handleSearch = (event) => {
 
        /* event.preventDefault();
