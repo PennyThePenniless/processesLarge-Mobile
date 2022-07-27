@@ -1,6 +1,6 @@
 
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Script } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, FlatList } from 'react-native';
 
 
 const getRecipe = (id) => {
@@ -65,7 +65,7 @@ constructor()
                         </View>
                         
                         <View style={styles.ingredients}>
-                            <Text>{object.ingredients}</Text>
+                            <FlatList data={object.ingredients}renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
                         </View>
                         <View style={styles.instructions}>
                            <Text>{object.instructions}</Text>
@@ -183,6 +183,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'pink'
     },
+    item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
     
 
 });
