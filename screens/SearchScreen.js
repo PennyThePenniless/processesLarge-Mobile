@@ -16,7 +16,6 @@ export default class SearchScreen extends Component {
         alert(jsonArr);
         }
     handleChange = (text) => {
-        Alert.alert(text);
         strInput = text;
         //setInput(strInput);
     }
