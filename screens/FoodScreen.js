@@ -16,14 +16,14 @@ constructor()
     this.state = 
     {
       title: '',
-    spoonacularID: ,
+    spoonacularID: 0 ,
     instructions: '',
     recipePhoto: '',
     ingredients: ['','',''],
-    numMade: ,
-    numRatings: ,
-    numSaved: ,
-    rating: ,
+    numMade: 0,
+    numRatings:0 ,
+    numSaved:0 ,
+    rating:0 ,
     }
   }
 
