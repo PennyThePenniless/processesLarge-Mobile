@@ -81,7 +81,7 @@ export default class LoginScreen extends Component {
     try {
       //Send Login request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/login',
-      {method:'GET',body:js,headers:{'Content-Type': 'application/json'}});
+      {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
       res = response;
       var _results = JSON.parse(await res.text());
