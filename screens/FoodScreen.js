@@ -38,7 +38,7 @@ constructor()
                     <View style={styles.picture}>
                         <Text>[Image]</Text>
                     </View>
-                    <Text style={{flex: 1}}>{this.state.title}</Text>
+                    <Text style={{flex: 1}}>{object.title}</Text>
                     <Text style={{flex: 1}}>rating</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
