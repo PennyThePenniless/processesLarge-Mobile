@@ -5,7 +5,17 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 
 const getRecipe = (id) => {
     // TODO: API call
-    object = {title: 'pizza'}
+    return({
+        title: 'Pizza',
+    spoonacularID: 123123,
+    instructions: 'Do this then do that',
+    recipePhoto: 'temp',
+    ingredients: ['cheese','potato'],
+    numMade: 1,
+    numRatings: 12,
+    numSaved: 3,
+    rating: 4,
+    })
 };
 
 export default class FoodScreen extends Component {
