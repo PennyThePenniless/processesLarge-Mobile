@@ -6,17 +6,12 @@ export default class SearchScreen extends Component {
     handleSearch = (event) => {
 
        /* event.preventDefault();
-        setShowResults(true)
+        setShowResults(true)*/
         const arr = strInput.split(' ').join('')
         const jsonArr = arr.split(',');
         
-        alert(jsonArr);*/
-        alert('test');
-        Alert.alert('test2');
-
-
-
-    }
+        alert(jsonArr);
+        }
 getSearchResults = () => {
     //TODO: Hit API for recipes
     return [{
