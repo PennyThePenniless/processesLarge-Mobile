@@ -19,10 +19,14 @@ export default class FoodScreen extends Component {
   })
   
 };
+   recipe = getRecipe();
     constructor() 
   {
     super()
-    this.state = getRecipe()
+    this.state = 
+        {
+        
+    }
     
   }
 
