@@ -92,7 +92,7 @@ export default class SearchScreen extends Component {
     }
 
 }
-const handleSearch = (event) => {
+const handleSearch = () => {
 
        /* event.preventDefault();
         setShowResults(true)
