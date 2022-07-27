@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList } from 'react-native';
 import {RegularList} from "../assets/Regularlist.js";
 import {Ingredient} from "../assets/Ingredients.js";
 
@@ -90,10 +90,9 @@ getSearchResults = () => {
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
-                     <RegularList
-                 
-                     resourceName="ingredient"
-                     itemComponent={Ingredients} />
+                     <FlatList
+                       data={ingredients}
+                      />
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
