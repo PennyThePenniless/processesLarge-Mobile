@@ -4,7 +4,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 
 
 export default class FoodScreen extends Component {
-   const getRecipe = (id) => {
+   getRecipe = (id) => {
     // TODO: API call
     return({
     title: 'Pizza',
@@ -22,10 +22,8 @@ export default class FoodScreen extends Component {
     constructor() 
   {
     super()
-    this.state = 
-        {
+    this.state = getRecipe();
         
-    }
     
   }
 
