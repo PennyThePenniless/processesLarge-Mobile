@@ -67,7 +67,7 @@ constructor()
                         <View style={styles.ingredients}>
                             <FlatList 
                     data={object.ingredients}
-                    renderItem={({ item }) => <Text>{item.key}</Text>}
+                    renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
                     keyExtractor={item => item.key}
                     />
                         </View>
