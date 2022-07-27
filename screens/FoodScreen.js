@@ -25,7 +25,7 @@ constructor()
     super()
     this.state = 
     {
-      object = getRecipe();
+      object = getRecipe(),
     }
   }
 
