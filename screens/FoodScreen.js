@@ -20,6 +20,12 @@ const getRecipe = (id) => {
 
 global.object = getRecipe();
 
+let list = object.ingredients
+
+list = list.map(x => {
+  return ({ key: x });
+})
+
 export default class FoodScreen extends Component {
    
  
@@ -66,7 +72,7 @@ constructor()
                         
                         <View style={styles.ingredients}>
                             <FlatList
-        data={object.ingredients}
+        data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
                         </View>
