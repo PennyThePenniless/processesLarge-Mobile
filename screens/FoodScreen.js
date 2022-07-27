@@ -177,10 +177,14 @@ const styles = StyleSheet.create({
     ingredients: {
         flex: 1,
         //backgroundColor: 'purple'
+        borderWidth: 1,
+        borderColor: '#7c5227',
     },
     instructions: {
         flex: 1,
        // backgroundColor: 'brown'
+        borderWidth: 1,
+        borderColor: '#7c5227',
     },
     userCreations: {
         flex: 1,
