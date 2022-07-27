@@ -17,7 +17,7 @@ export default class FoodScreen extends Component {
     numSaved: 3,
     rating: 4,
   })
-  
+  object = getRecipe();
 };
     constructor() 
   {
