@@ -78,7 +78,7 @@ constructor()
 ListFooterComponent={
         <Text style={{color: '#7c5227'}}>{object.instructions}</Text>
     }/>
-      />
+      
             
                         
                             
