@@ -6,6 +6,18 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 export default class FoodScreen extends Component {
     getRecipe = (id) => {
     // TODO: API call
+    return({
+    title: 'Pizza',
+    spoonacularID: 12123,
+    instructions: 'Do this and then do that and then do this',
+    recipePhoto: 'temp',
+    ingredients: ['Cheese','Sauce','dough'],
+    numMade: 57,
+    numRatings: 47,
+    numSaved: 3,
+    rating: 4,
+  };)
+  
 };
 
 
