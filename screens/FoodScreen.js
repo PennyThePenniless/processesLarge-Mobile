@@ -48,10 +48,6 @@ constructor()
                 <View style={styles.box2}>
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
-                    <View style={styles.picture}>
-                        <Text>[Image]</Text>
-                    </View>
-                    <Text style={{flex: 1}}>{object.title}</Text>
                     <Text style={{flex: 1}}>{object.rating}</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
@@ -59,28 +55,22 @@ constructor()
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text style={{textAlign: 'center'}}>Nutrition</Text>
+                             <Text style={{textAlign: 'center'}}>{object.title}</Text>
+                             <View style={styles.picture}>
+                               <Text>[Image]</Text>
+                    </View>
                         </View>
                         <View style={styles.recipe}>
                              <Text style={{textAlign: 'center'}}>Recipe</Text>
                         </View>
-                        <View style={styles.row}>
-                             <View style={styles.prepTime}>
-                                <Text>prep time:</Text>
-                            </View>
-                            <View style={styles.cookTime}>
-                                <Text>cook time:</Text>
-                            </View>
-                        </View>
+                        
                         <View style={styles.ingredients}>
                             <Text>{object.ingredients}</Text>
                         </View>
                         <View style={styles.instructions}>
                            <Text>{object.instructions}</Text>
                         </View>
-                        <View style={styles.userCreations}>
-                                <Text style={{textAlign: 'center'}}>User Creations</Text>
-                         </View>
+                        
                     
                        
                     
