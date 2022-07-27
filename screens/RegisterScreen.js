@@ -66,7 +66,7 @@ export default class LoginScreen extends Component {
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style= {styles.signButton}
-                onPress={this.goToSearch}>
+                onPress={this.props.navigation.navigate('Search');}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>go to search</Text>
                 </TouchableOpacity>
                 </View>
@@ -121,9 +121,6 @@ export default class LoginScreen extends Component {
       this.setState({message: 'Something went wrong. Please try again later.'});
     }
   }
-}
-goToSearch = async () => {
-  this.props.navigation.navigate('Search');
 }
 
 function getWidth() {
