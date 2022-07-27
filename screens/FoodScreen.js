@@ -4,7 +4,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 
 
 export default class FoodScreen extends Component {
-    getRecipe = (id) => {
+   const getRecipe = (id) => {
     // TODO: API call
     return({
     title: 'Pizza',
@@ -19,7 +19,6 @@ export default class FoodScreen extends Component {
   })
   
 };
-   recipe = getRecipe();
     constructor() 
   {
     super()
