@@ -17,7 +17,7 @@ export default class SearchScreen extends Component {
     handleChange = (text) => {
         Alert.alert(text);
         const strInput = text;
-        setInput(strInput);
+        //setInput(strInput);
     }
 getSearchResults = () => {
     //TODO: Hit API for recipes
