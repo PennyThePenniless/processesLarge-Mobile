@@ -63,7 +63,7 @@ constructor()
                         <View style={styles.nutrition}>
                              <Text style={{textAlign: 'center',fontColor: '#7c5227',}}>{object.title}</Text>
                              <View style={styles.picture}>
-                               <Text style={{fontColor: '#7c5227'}}>[Image]</Text>
+                               <Text style={{fontFamily: '#7c5227'}}>[Image]</Text>
                     </View>
                         </View>
                        <View style={styles.ingredients}>
