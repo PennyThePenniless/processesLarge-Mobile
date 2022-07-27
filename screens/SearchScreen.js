@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
 
 
 export default class SearchScreen extends Component {
@@ -100,7 +100,8 @@ const handleSearch = (event) => {
         const jsonArr = arr.split(',');
         
         alert(jsonArr);*/
-        navigation.navigate('register');
+        alert('test');
+        Alert.alert('test2');
 
 
 
