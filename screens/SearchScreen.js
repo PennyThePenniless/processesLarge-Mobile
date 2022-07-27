@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList } from 'react-native';
 
-//Havent gotten around to implementing these, would problably be overkill
+
 import {RegularList} from "../assets/Regularlist.js";
 import {Ingredient} from "../assets/Ingredients.js";
 
@@ -10,12 +10,12 @@ global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
 
 
-// temporary just to test the ingredients tab to the left of the screen
+
 const ingredients = ["Egg", "Milk", "Flour"];
 
 
 export default class SearchScreen extends Component {
-   //jsonArr to be sent to API
+   
     handleSearch = (event) => {
 
        /* event.preventDefault();
