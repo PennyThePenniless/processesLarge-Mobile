@@ -72,7 +72,6 @@ constructor()
       <>
         <Text style={{color: '#7c5227'}}>Ingredients:</Text>
       </>}
-        scrollEnabled={false}
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
 ListFooterComponent={
