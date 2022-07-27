@@ -3,6 +3,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 
 global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
+const ingredients = ["Egg", "Milk", "Flour"];
 export default class SearchScreen extends Component {
    
     handleSearch = (event) => {
@@ -73,7 +74,6 @@ getSearchResults = () => {
         numSaved: 1
     }];
 }
-  const ingredients = ["Egg", "Milk", "Flour"];
 
     render() {
         return(
