@@ -66,19 +66,24 @@ constructor()
                                <Text style={{color: '#7c5227'}}>[Image]</Text>
                     </View>
                         </View>
-                       <ScrollView style={styles.ingredients}>
-                           <View>
-                            <Text style={{color: '#7c5227'}}>Ingredients:</Text>
+                       <View style={styles.ingredients}>
                             <FlatList
+        LisHeaderComponent={
+      <>
+        <Text style={{color: '#7c5227'}}>Ingredients:</Text>
+      </>}
         scrollEnabled={false}
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-      />
-            </View>
-                        
-                            <Text style={{color: '#7c5227'}}>Instructions:</Text>
+ListFooterComponent={
+        <Text style={{color: '#7c5227'}}>Instructions:</Text>
                            <Text style={{color: '#7c5227'}}>{object.instructions}</Text>
-                        </ScrollView>
+    }/>
+      />
+            
+                        
+                            
+                        </View>
                         
                     
                        
