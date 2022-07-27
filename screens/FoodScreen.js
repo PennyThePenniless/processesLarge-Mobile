@@ -22,7 +22,7 @@ export default class FoodScreen extends Component {
     rating: 4,
   })
 };
-    global.object = getRecipe(id);
+    global.object = getRecipe();
 
 
 
