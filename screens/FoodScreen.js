@@ -19,6 +19,15 @@ export default class FoodScreen extends Component {
   })
   
 };
+    constructor() 
+  {
+    super()
+    this.state = 
+    {
+       test: ' ',
+       
+    }
+  }
 
 
 
@@ -32,7 +41,7 @@ export default class FoodScreen extends Component {
                     <View style={styles.picture}>
                         <Text>[Image]</Text>
                     </View>
-                    <Text style={{flex: 1}}>Food Name</Text>
+                    <Text style={{flex: 1}}>{getRecipe}</Text>
                     <Text style={{flex: 1}}>rating</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
