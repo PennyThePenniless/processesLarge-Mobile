@@ -23,7 +23,7 @@ export default class FoodScreen extends Component {
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text style={{justifyContent: 'center'}}>Nutrition</Text>
+                             <Text style={{textAlign: 'center'}}>Nutrition</Text>
                         </View>
                         <View style={styles.recipe}>
                              <Text>Recipe</Text>
