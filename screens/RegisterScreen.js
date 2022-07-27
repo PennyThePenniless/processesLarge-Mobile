@@ -121,7 +121,7 @@ export default class LoginScreen extends Component {
       }
     }
     catch (error) { //Unexpected status code
-      this.setState({message: 'Something went wrong. Please try again later.'});
+      this.setState({message: res.status});
     }
   }
 }
