@@ -69,7 +69,7 @@ constructor()
                        <View style={styles.ingredients}>
                             <Text style={{color: '#7c5227'}}>Ingredients:</Text>
                             <FlatList
-    nestedScrollEnabled={false}
+        ScrollEnabled={false}
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
@@ -165,7 +165,6 @@ const styles = StyleSheet.create({
     nutrition: {
         flex: 1,
         //backgroundColor: 'yellow',
-        fontFamily: '#7c5227',
     },
     recipe: {
         //flex: 1,
