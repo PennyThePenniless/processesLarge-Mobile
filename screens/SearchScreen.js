@@ -9,9 +9,7 @@ export default class SearchScreen extends Component {
     super()
     this.state = 
     {
-      isEmailFocus: false,
-      isPasswordFocus: false,
-       message: ' '
+      
     }
   }
     handleSearch = (event) => {
@@ -26,6 +24,7 @@ export default class SearchScreen extends Component {
     handleChange = (text) => {
 
         const strInput = text;
+        Alert(strInput);
         setInput(strInput);
     }
 getSearchResults = () => {
