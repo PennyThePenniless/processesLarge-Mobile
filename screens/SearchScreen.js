@@ -12,6 +12,11 @@ export default class SearchScreen extends Component {
         
         alert(jsonArr);
         }
+    handleChange = (text) => {
+
+        const strInput = text;
+        setInput(strInput);
+    }
 getSearchResults = () => {
     //TODO: Hit API for recipes
     return [{
@@ -73,6 +78,7 @@ getSearchResults = () => {
                 <View style={styles.box1}>
                 <TextInput style={styles.textInput} placeholder="type ingredients seperated by a comma..."></TextInput>
                 <Button onPress={this.handleSearch}
+                 onChangeText={this.handleChange}
                 title= "Search"></Button>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
