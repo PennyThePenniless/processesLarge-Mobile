@@ -1,6 +1,7 @@
 
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity } from 'react-native';
+global.object;
 
 
 export default class FoodScreen extends Component {
