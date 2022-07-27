@@ -7,17 +7,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 export default class FoodScreen extends Component {
    getRecipe = (id) => {
     // TODO: API call
-    return({
-    title: 'Pizza',
-    spoonacularID: 12123,
-    instructions: 'Do this and then do that and then do this',
-    recipePhoto: 'temp',
-    ingredients: ['Cheese','Sauce','dough'],
-    numMade: 57,
-    numRatings: 47,
-    numSaved: 3,
-    rating: 4,
-  })
+    this.setState({title:'Pizza'})
 };
     
 constructor() 
@@ -25,7 +15,15 @@ constructor()
     super()
     this.state = 
     {
-      object = getRecipe(),
+      title: '',
+    spoonacularID: ,
+    instructions: '',
+    recipePhoto: '',
+    ingredients: ['','',''],
+    numMade: ,
+    numRatings: ,
+    numSaved: ,
+    rating: ,
     }
   }
 
@@ -40,7 +38,7 @@ constructor()
                     <View style={styles.picture}>
                         <Text>[Image]</Text>
                     </View>
-                    <Text style={{flex: 1}}>{object.title}</Text>
+                    <Text style={{flex: 1}}>{this.state.title}</Text>
                     <Text style={{flex: 1}}>rating</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
