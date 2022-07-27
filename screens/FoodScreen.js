@@ -15,7 +15,7 @@ constructor()
     super()
     this.state = 
     {
-      title: '',
+      title: object.title,
     spoonacularID: 0 ,
     instructions: '',
     recipePhoto: '',
