@@ -21,7 +21,7 @@ export default class FoodScreen extends Component {
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
-                    <ScrollView>
+                    
                         <View style={styles.nutrition}>
                              <Text>Nutrition</Text>
                         </View>
@@ -47,7 +47,7 @@ export default class FoodScreen extends Component {
                          </View>
                     
                        
-                    </ScrollView>
+                    
                 </View>
                 </View>
             </View>
