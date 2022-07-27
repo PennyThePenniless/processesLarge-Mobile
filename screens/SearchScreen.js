@@ -100,7 +100,7 @@ const handleSearch = (event) => {
         const jsonArr = arr.split(',');
         
         alert(jsonArr);*/
-        alert("test");
+        this.props.navigation.navigate('register');
 
 
 
