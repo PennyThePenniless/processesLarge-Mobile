@@ -81,7 +81,7 @@ export default class LoginScreen extends Component {
     try {
       //Send Login request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/login',
-      {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+      {method:'GET',body:js,headers:{'Content-Type': 'application/json'}});
 
       res = response;
       var _results = JSON.parse(await res.text());
@@ -104,7 +104,7 @@ export default class LoginScreen extends Component {
         this.setState({message: 'Email and/or password entered is incorrect' });
       }
       else {
-        this.setState({message: 'Something went wrong. Please try again later.'});
+        this.setState({message: res.status});
       }
       
     }
