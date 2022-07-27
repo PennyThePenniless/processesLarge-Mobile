@@ -9,7 +9,7 @@ export default class FoodScreen extends Component {
     // TODO: API call
     this.setState({title:'Pizza'})
 };
-    
+  getRecipe();
 constructor() 
   {
     super()
