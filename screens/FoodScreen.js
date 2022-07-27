@@ -1,7 +1,7 @@
 
 import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity } from 'react-native';
-global.object = {title: '',spoonacularID:' ',instructions: ' ',recipePhoto: ' ',ingredients: [],numMade: 0,
+global.object = {title: 'test',spoonacularID:' ',instructions: ' ',recipePhoto: ' ',ingredients: [],numMade: 0,
     numRatings: 0,
     numSaved: 0,
     rating: 0,};
