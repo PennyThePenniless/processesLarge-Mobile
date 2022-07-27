@@ -70,7 +70,7 @@ constructor()
                              <Text style={{textAlign: 'center'}}>Recipe</Text>
                         </View>
                         
-                        <View style={styles.ingredients}>
+                        <ScrollView style={styles.ingredients}>
                             <Text>Ingredients:</Text>
                             <FlatList
         data={list}
@@ -80,7 +80,7 @@ constructor()
                         <View style={styles.instructions}>
                             <Text>Instructions:</Text>
                            <Text>{object.instructions}</Text>
-                        </View>
+                        </ScrollView>
                         
                     
                        
