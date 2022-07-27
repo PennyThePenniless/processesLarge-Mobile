@@ -23,10 +23,7 @@ export default class FoodScreen extends Component {
   {
     super()
     this.state = getRecipe()
-    {
-       
-       
-    }
+    
   }
 
 
