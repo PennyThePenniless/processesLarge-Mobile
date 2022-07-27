@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     },
     recipe: {
         //flex: 1,
-        justifyContent: 'center',
+        textAlign: 'center',
         backgroundColor: 'blue'
     },
     ingredients: {
