@@ -26,7 +26,7 @@ export default class FoodScreen extends Component {
                              <Text style={{textAlign: 'center'}}>Nutrition</Text>
                         </View>
                         <View style={styles.recipe}>
-                             <Text>Recipe</Text>
+                             <Text style={{textAlign: 'center'}}>Recipe</Text>
                         </View>
                         <View style={styles.row}>
                              <View style={styles.prepTime}>
@@ -43,7 +43,7 @@ export default class FoodScreen extends Component {
                            <Text>instructions</Text>
                         </View>
                         <View style={styles.userCreations}>
-                                <Text>User Creations</Text>
+                                <Text style={{textAlign: 'center'}}>User Creations</Text>
                          </View>
                     
                        
