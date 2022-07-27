@@ -90,7 +90,7 @@ getSearchResults = () => {
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
                      <RegularList
-                     items=
+                 
                      resourceName="ingredient"
                      itemComponent={Ingredients} />
                 </View>
