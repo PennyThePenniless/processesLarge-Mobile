@@ -52,7 +52,7 @@ constructor()
                         <Text>[Image]</Text>
                     </View>
                     <Text style={{flex: 1}}>{object.title}</Text>
-                    <Text style={{flex: 1}}>rating</Text>
+                    <Text style={{flex: 1}}>{object.rating}</Text>
                     <Text style={{flex: 1}}>You made this recipe</Text>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
@@ -73,10 +73,10 @@ constructor()
                             </View>
                         </View>
                         <View style={styles.ingredients}>
-                            <Text>ingredients</Text>
+                            <Text>{object.ingredients}</Text>
                         </View>
                         <View style={styles.instructions}>
-                           <Text>instructions</Text>
+                           <Text>{object.instructions}</Text>
                         </View>
                         <View style={styles.userCreations}>
                                 <Text style={{textAlign: 'center'}}>User Creations</Text>
