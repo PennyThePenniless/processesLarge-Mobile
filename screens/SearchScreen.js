@@ -98,10 +98,11 @@ getSearchResults = () => {
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
-                     //Was trying to show the ingredients list here, couldnt get it to work yet
+                     /*Was trying to show the ingredients list here, couldnt get it to work yet
                      <FlatList
                        data={ingredients}
                       />
+                     */
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
