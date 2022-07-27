@@ -22,9 +22,9 @@ export default class FoodScreen extends Component {
     constructor() 
   {
     super()
-    this.state = 
+    this.state = getRecipe()
     {
-       test: ' ',
+       
        
     }
   }
