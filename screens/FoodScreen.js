@@ -23,7 +23,7 @@ export default class FoodScreen extends Component {
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text>Nutrition</Text>
+                             <Text style={{justifyContent: 'center'}}>Nutrition</Text>
                         </View>
                         <View style={styles.recipe}>
                              <Text>Recipe</Text>
@@ -133,7 +133,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'yellow'
     },
     recipe: {
-        flex: 1,
+        //flex: 1,
+        justifyContent: 'center',
         backgroundColor: 'blue'
     },
     ingredients: {
