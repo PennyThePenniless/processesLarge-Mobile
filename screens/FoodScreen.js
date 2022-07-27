@@ -66,18 +66,17 @@ constructor()
                                <Text style={{color: '#7c5227'}}>[Image]</Text>
                     </View>
                         </View>
-                       <View style={styles.ingredients}>
+                       <ScrollView style={styles.ingredients}>
                             <Text style={{color: '#7c5227'}}>Ingredients:</Text>
                             <FlatList
         scrollEnabled={false}
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
-                        </View>
-                        <View style={styles.instructions}>
+                        
                             <Text style={{color: '#7c5227'}}>Instructions:</Text>
                            <Text style={{color: '#7c5227'}}>{object.instructions}</Text>
-                        </View>
+                        </ScrollView>
                         
                     
                        
@@ -175,7 +174,7 @@ const styles = StyleSheet.create({
         fontColor: '#7c5227',
     },
     ingredients: {
-        flex: 1,
+        flex: 2,
         //backgroundColor: 'purple'
         borderWidth: 1,
         borderColor: '#7c5227',
