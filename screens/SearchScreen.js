@@ -88,7 +88,10 @@ getSearchResults = () => {
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
                     <Text>Ingredients</Text>
-                    <Text>Exclude:</Text>
+                     <RegularList
+                     items={data}
+                     resourceName="ingredient"
+                     itemComponent={Ingredients} />
                 </View>
                 <View style={styles.box3}>
                     <ScrollView>
