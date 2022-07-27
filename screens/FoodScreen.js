@@ -61,21 +61,21 @@ constructor()
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text style={{textAlign: 'center'}}>{object.title}</Text>
+                             <Text style={{textAlign: 'center',fontColor: '#7c5227',}}>{object.title}</Text>
                              <View style={styles.picture}>
-                               <Text>[Image]</Text>
+                               <Text style={{fontColor: '#7c5227'}}>[Image]</Text>
                     </View>
                         </View>
                        <View style={styles.ingredients}>
-                            <Text>Ingredients:</Text>
+                            <Text style={{fontColor: '#7c5227'}}>Ingredients:</Text>
                             <FlatList
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
                         </View>
                         <View style={styles.instructions}>
-                            <Text>Instructions:</Text>
-                           <Text>{object.instructions}</Text>
+                            <Text style={{fontColor: '#7c5227'}}>Instructions:</Text>
+                           <Text style={{fontColor: '#7c5227'}}>{object.instructions}</Text>
                         </View>
                         
                     
@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+    fontColor: '#7c5227',
   },
     
 
