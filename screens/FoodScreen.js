@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         //backgroundColor: 'blue'
         borderWidth: 1,
+        borderColor: '
     },
     ingredients: {
         flex: 1,
