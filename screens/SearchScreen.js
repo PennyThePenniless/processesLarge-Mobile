@@ -90,6 +90,60 @@ export default class SearchScreen extends Component {
     }
 
 }
+const getSearchResults = () => {
+    //TODO: Hit API for recipes
+    return [{
+        title: 'Pasta',
+        rating: 4.5,
+        ingredients: [
+            'flour', 'cheese', 'eggs'
+        ],
+        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
+        id: 632660,
+        numMade: 5,
+        numSaved: 3
+    }, {
+        title: 'Bread',
+        rating: 3.5,
+        ingredients: [
+            'flour', 'eggs', 'butter'
+        ],
+        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
+        id: 12312,
+        numMade: 7,
+        numSaved: 1
+    }, {
+        title: 'Bread',
+        rating: 3.5,
+        ingredients: [
+            'flour', 'eggs', 'butter'
+        ],
+        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
+        id: 12312,
+        numMade: 7,
+        numSaved: 1
+    }, {
+        title: 'Bread',
+        rating: 3.5,
+        ingredients: [
+            'flour', 'eggs', 'butter'
+        ],
+        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
+        id: 12312,
+        numMade: 7,
+        numSaved: 1
+    }, {
+        title: 'Bread',
+        rating: 3.5,
+        ingredients: [
+            'flour', 'eggs', 'butter'
+        ],
+        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
+        id: 12312,
+        numMade: 7,
+        numSaved: 1
+    }];
+}
 
 const styles = StyleSheet.create({
     mainContainer: {
