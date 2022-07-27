@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-const List = styled.view`
+const List = styled.View`
     overflow: auto;
 `;
 
