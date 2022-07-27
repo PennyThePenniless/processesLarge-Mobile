@@ -73,6 +73,7 @@ getSearchResults = () => {
         numSaved: 1
     }];
 }
+  const ingredients = ["Egg", "Milk", "Flour"];
 
     render() {
         return(
