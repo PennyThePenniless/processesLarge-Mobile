@@ -86,7 +86,7 @@ getSearchResults = () => {
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
                 <TextInput style={styles.textInput}
-                onChangeText={(text) =>this.handleChange(text)} placeholder="type ingredients seperated by a comma..."></TextInput>
+                onChangeText={this.handleChange(text)} placeholder="type ingredients seperated by a comma..."></TextInput>
                 <Button onPress={this.handleSearch}
                 title= "Search"></Button>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
