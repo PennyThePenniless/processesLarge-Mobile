@@ -110,7 +110,7 @@ export default class LoginScreen extends Component {
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
-      if(res.status == 200) { //Registration successful
+      if(res.status == 201) { //Registration successful
         this.props.navigation.navigate('Search');
       }
       else if (res.status == 409) { //something problably already exist
