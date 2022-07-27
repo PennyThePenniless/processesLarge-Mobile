@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     nutrition: {
         flex: 1,
         //backgroundColor: 'yellow',
-        fontColor: '#7c5227',
+        fontFamily: '#7c5227',
     },
     recipe: {
         //flex: 1,
