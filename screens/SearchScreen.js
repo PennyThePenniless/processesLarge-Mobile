@@ -16,7 +16,7 @@ export default class SearchScreen extends Component {
         }
     handleChange = (text) => {
         Alert.alert(text);
-        const strInput = text;
+        strInput = text;
         //setInput(strInput);
     }
 getSearchResults = () => {
