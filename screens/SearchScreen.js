@@ -8,7 +8,9 @@ export default class SearchScreen extends Component {
         return(
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
-                <TextInput style={styles.textInput} placeholder="Search for recipes by ingredients"></TextInput>
+                <TextInput style={styles.textInput} placeholder="type ingredients seperated by a comma..."></TextInput>
+                <Button onPress={() => handleSearch}
+                title= "Search"></Button>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
                 </View>
@@ -90,6 +92,18 @@ export default class SearchScreen extends Component {
     }
 
 }
+const handleSearch = (event) => {
+
+       /* event.preventDefault();
+        setShowResults(true)
+        const arr = strInput.split(' ').join('')
+        const jsonArr = arr.split(',');
+        
+        alert(jsonArr);*/
+
+
+
+    }
 const getSearchResults = () => {
     //TODO: Hit API for recipes
     return [{
