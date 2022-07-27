@@ -3,7 +3,7 @@ import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Script } from 'react-native';
 
 
-getRecipe = (id) => {
+const getRecipe = (id) => {
     // TODO: API call
     object = {title: 'pizza'}
 };
