@@ -23,16 +23,6 @@ export default class FoodScreen extends Component {
   })
 };
     global.object = getRecipe(id);
-    constructor() 
-  {
-    super()
-    this.state = 
-       {
-       
-      }
-        
-    
-  }
 
 
 
