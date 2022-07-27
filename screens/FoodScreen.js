@@ -67,12 +67,14 @@ constructor()
                     </View>
                         </View>
                        <ScrollView style={styles.ingredients}>
+                           <View>
                             <Text style={{color: '#7c5227'}}>Ingredients:</Text>
                             <FlatList
         scrollEnabled={false}
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
+            </View>
                         
                             <Text style={{color: '#7c5227'}}>Instructions:</Text>
                            <Text style={{color: '#7c5227'}}>{object.instructions}</Text>
