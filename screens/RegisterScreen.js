@@ -66,7 +66,7 @@ export default class LoginScreen extends Component {
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style= {styles.signButton}
-                onPress={this.props.navigation.navigate('Search');}>
+                onPress={() => navigation.navigate('Search')}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>go to search</Text>
                 </TouchableOpacity>
                 </View>
