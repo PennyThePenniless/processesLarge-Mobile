@@ -18,6 +18,8 @@ const getRecipe = (id) => {
     })
 };
 
+global.object = getRecipe();
+
 export default class FoodScreen extends Component {
    
  
