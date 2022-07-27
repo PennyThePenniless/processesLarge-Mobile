@@ -3,7 +3,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 
 
 export default class SearchScreen extends Component {
-    const handleSearch = (event) => {
+    handleSearch = (event) => {
 
        /* event.preventDefault();
         setShowResults(true)
@@ -17,7 +17,7 @@ export default class SearchScreen extends Component {
 
 
     }
-const getSearchResults = () => {
+getSearchResults = () => {
     //TODO: Hit API for recipes
     return [{
         title: 'Pasta',
