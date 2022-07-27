@@ -3,12 +3,13 @@ import React, {Component, useState} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Script } from 'react-native';
 
 
-
-export default class FoodScreen extends Component {
-   getRecipe = (id) => {
+getRecipe = (id) => {
     // TODO: API call
     object = {title: 'pizza'}
 };
+
+export default class FoodScreen extends Component {
+   
  
 constructor() 
   {
