@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         
     },
     box3: {
-        backgroundColor: 'green',
+        backgroundColor: '#FEFAE0',
         flex: 3,
         
     },
@@ -131,66 +131,66 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         borderWidth: 0,
         borderRadius: 5,
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
       },
     foodBox: {
-        backgroundColor: 'purple',
+        //backgroundColor: 'purple',
         height: 120,
         flexDirection: 'row',
         padding: 5,
         },
     picture: {
         flex: 1,
-        backgroundColor: 'pink'
+        //backgroundColor: 'pink'
     },
     foodName: {
         flex: 1,
-        backgroundColor: 'white',
+        //backgroundColor: 'white',
         
     },
     info: {
        flex: 1,
-    backgroundColor: 'blue'
+    //backgroundColor: 'blue'
     },
     cookTime:{
         flex: 1,
-        backgroundColor: 'yellow'
+       // backgroundColor: 'yellow'
         },
     rating: {
         flex: 1,
-        backgroundColor: 'brown'
+        //backgroundColor: 'brown'
     },
     row: {
         flexDirection: 'row'
     },
     nutrition: {
         flex: 1,
-        backgroundColor: 'yellow'
+        //backgroundColor: 'yellow'
     },
     recipe: {
         //flex: 1,
         textAlign: 'center',
-        backgroundColor: 'blue'
+        //backgroundColor: 'blue'
     },
     ingredients: {
         flex: 1,
-        backgroundColor: 'purple'
+        //backgroundColor: 'purple'
     },
     instructions: {
         flex: 1,
-        backgroundColor: 'brown'
+       // backgroundColor: 'brown'
     },
     userCreations: {
         flex: 1,
-        backgroundColor: 'white'
+        //backgroundColor: 'white'
     },
     prepTime: {
         flex: 1,
-        backgroundColor: 'red'
+        //backgroundColor: 'red'
     },
     cookTime: {
         flex: 1,
-        backgroundColor: 'pink'
+        //backgroundColor: 'pink'
     },
     item: {
     padding: 10,
