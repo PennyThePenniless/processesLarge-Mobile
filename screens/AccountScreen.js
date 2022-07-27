@@ -10,6 +10,13 @@ export default class AccountScreen extends Component {
             <View style= {styles.mainContainer}> 
                   <ScrollView>
                     <View style={styles.container}>
+                      <View style= {{flexDirection:'row-reverse'}}>
+                        <TouchableOpacity style= {styles.logoutButton}
+                          onPress= {() => this.props.navigation.navigate('Login')}>
+                          <Text style= {{fontSize: 20, marginLeft: '3%', color: '#7C5227', fontWeight: '600'}}>Logout</Text>
+                        </TouchableOpacity>
+                      </View>
+                      <View style= {{ alignItems: 'center', justifyContent: 'center'}}>
                       <View style= {{alignContent: "center"}}>
                         <Icon name= "person-circle-outline"
                               size={280}
@@ -19,19 +26,20 @@ export default class AccountScreen extends Component {
                         <TouchableOpacity 
                           onPress={() => {this.props.navigation.navigate('AccountList')}}
                           style={[styles.madeButton,{flexDirection: "row"}]}>
-                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25, }}>5 Made Recipes</Text>
+                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25}}>5 Made Recipes</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                           onPress={() => {this.props.navigation.navigate('AccountList')}} 
                           style={[styles.savedButton,{flexDirection: "row"}]}>
-                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25, }}>3 Saved Recipes</Text>
+                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25}}>3 Saved Recipes</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                           onPress={() => {this.props.navigation.navigate('AccountList')}} 
                           style={[styles.changeButton,{flexDirection: "row"}]}>
-                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25, }}>Change Password</Text>
+                          <Text style={{color: '#FEFAE0', fontWeight: '700', fontSize: 25}}>Change Password</Text>
                         </TouchableOpacity>
-                    </View>
+                      </View>
+                      </View>
                 </ScrollView>
             </View>
         )
@@ -102,9 +110,8 @@ const styles = StyleSheet.create({
         borderRadius: 10
       },
       container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: getWidth() * 0.15,
+
+        marginTop: getWidth() * 0.08,
         margin: '5%'
       }
 });
