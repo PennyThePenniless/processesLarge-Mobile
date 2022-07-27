@@ -88,7 +88,7 @@ export default class LoginScreen extends Component {
       if( res.status != 200 )
       {
         console.log('Email and/or password entered is incorrect');
-        this.setState({message: res.status });
+        this.setState({message: 'Email and/or password entered is incorrect'});
       }
       else //Success
       {
