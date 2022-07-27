@@ -163,7 +163,8 @@ const styles = StyleSheet.create({
     },
     nutrition: {
         flex: 1,
-        //backgroundColor: 'yellow'
+        //backgroundColor: 'yellow',
+        fontColor: '#7c5227',
     },
     recipe: {
         //flex: 1,
@@ -171,18 +172,21 @@ const styles = StyleSheet.create({
         //backgroundColor: 'blue'
         borderWidth: 1,
         borderColor: '#7c5227',
+        fontColor: '#7c5227',
     },
     ingredients: {
         flex: 1,
         //backgroundColor: 'purple'
         borderWidth: 1,
         borderColor: '#7c5227',
+        fontColor: '#7c5227',
     },
     instructions: {
         flex: 1,
        // backgroundColor: 'brown'
         borderWidth: 1,
         borderColor: '#7c5227',
+        fontColor: '#7c5227',
     },
     userCreations: {
         flex: 1,
