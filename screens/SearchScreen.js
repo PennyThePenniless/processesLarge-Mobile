@@ -9,7 +9,7 @@ export default class SearchScreen extends Component {
             <View style= {styles.mainContainer}>
                 <View style={styles.box1}>
                 <TextInput style={styles.textInput} placeholder="type ingredients seperated by a comma..."></TextInput>
-                <Button onPress={handleSearch}
+                <Button onPress={this.handleSearch}
                 title= "Search"></Button>
                 <Button onPress={() => this.props.navigation.navigate('Login')}
                 title= "Logout"></Button>
@@ -92,7 +92,7 @@ export default class SearchScreen extends Component {
     }
 
 }
-const handleSearch = () => {
+const handleSearch = (event) => {
 
        /* event.preventDefault();
         setShowResults(true)
@@ -100,7 +100,7 @@ const handleSearch = () => {
         const jsonArr = arr.split(',');
         
         alert(jsonArr);*/
-        this.props.navigation.navigate('register');
+        navigation.navigate('register');
 
 
 
