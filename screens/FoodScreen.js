@@ -22,12 +22,13 @@ export default class FoodScreen extends Component {
     rating: 4,
   })
 };
-    global.object = getRecipe();
+    
 
 
 
     render() {
         return(
+            global.object = getRecipe();
             <View style= {styles.mainContainer}>
                 <View style={styles.rowBox}>
                 <View style={styles.box2}>
