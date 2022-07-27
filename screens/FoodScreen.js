@@ -7,7 +7,7 @@ import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, Touch
 export default class FoodScreen extends Component {
    getRecipe = (id) => {
     // TODO: API call
-    object = (title: 'pizza'}
+    object = {title: 'pizza'}
 };
  
 constructor() 
