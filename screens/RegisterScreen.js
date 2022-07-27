@@ -117,7 +117,7 @@ export default class LoginScreen extends Component {
         this.setState({message: 'An account with this email already exists.' });
       }
       else{
-        this.setState({message: 'else' });
+        this.setState({message: res.status });
       }
     }
     catch (error) { //Unexpected status code
