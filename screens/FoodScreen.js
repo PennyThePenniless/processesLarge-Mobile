@@ -16,7 +16,7 @@ export default class FoodScreen extends Component {
     numRatings: 47,
     numSaved: 3,
     rating: 4,
-  };)
+  })
   
 };
 
