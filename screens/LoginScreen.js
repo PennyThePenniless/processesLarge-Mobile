@@ -81,7 +81,7 @@ export default class LoginScreen extends Component {
     try {
       //Send Login request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/login',
-      {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+      {method:'GET',body:js,headers:{'Content-Type': 'application/json'}});
 
       res = response;
       var _results = JSON.parse(await res.text());
@@ -92,9 +92,9 @@ export default class LoginScreen extends Component {
       }
       else //Success
       {
-        /*global.firstName = res.firstName;
+        global.firstName = res.firstName;
         global.lastName = res.lastName;
-        global.userId = res.id;*/
+        global.userId = res.id;
         this.props.navigation.navigate('Search');
         
       }
