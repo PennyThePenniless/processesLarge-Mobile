@@ -21,8 +21,8 @@ export default class FoodScreen extends Component {
     numSaved: 3,
     rating: 4,
   })
-  global.object = getRecipe(id);
 };
+    global.object = getRecipe(id);
     constructor() 
   {
     super()
