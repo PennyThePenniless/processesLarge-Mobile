@@ -67,7 +67,7 @@ export default class LoginScreen extends Component {
                 onFocus= {() => this.setState({isConfirmPasswordFocus: true})}
                 onBlur= {() => this.setState({isConfirmPasswordFocus: false})}
                 onChangeText={(val) => {
-                  global.registerPassword = val;
+                  global.confirmPassword = val;
                 }}
                 secureTextEntry={true}>
                 </TextInput>
