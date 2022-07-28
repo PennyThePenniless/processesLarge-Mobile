@@ -144,7 +144,7 @@ id: 1, data: []},
                 <View style= {styles.container}>
                     <View style= {{height: getHeight() * 0.25, width: '100%', backgroundColor: '#FEFAE0'}}>
                     <View style={styles.header}>
-                        <View style= {{ flex: 2.5/5}}>
+                        <View style= {{ flex: 3/5}}>
                             <View style= {{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <TextInput style={[styles.textInput]} 
                                 onChangeText={this.handleChange} 
