@@ -68,7 +68,7 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}>
                 </TextInput>
                 
-                <View style={{alignItems:'center}}>
+                <View style={{alignItems:'center'}}>
                 <TouchableOpacity style= {styles.signButton}
                 onPress={this.handleRegister}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
