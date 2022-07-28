@@ -68,10 +68,12 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}>
                 </TextInput>
                 
+                <View style={{alignItems:'center}}>
                 <TouchableOpacity style= {styles.signButton}
                 onPress={this.handleRegister}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
                 </TouchableOpacity>
+                </View>
                 
             <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, flexWrap: 'wrap'}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
