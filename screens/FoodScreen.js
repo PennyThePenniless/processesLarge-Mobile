@@ -22,7 +22,7 @@ const getRecipe = (id) => {
     rating: 4,
     })
 };
-const FoodSideBar = () => {
+
     let recipeName = "Test";
     const [made, setMade] = useState();
     const [saved, setSaved] = useState();
