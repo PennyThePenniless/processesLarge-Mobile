@@ -1,11 +1,11 @@
 
 import React, {Component, useState, useEffect} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, FlatList } from 'react-native';
-import Plate from '/assets/images/plate.png';
-import Pot from '/assets/images/pot.png';
-import PotClicked from '/assets/images/potClicked.png';
-import Heart from '/assets/images/heart.png';
-import HeartClicked from '/assets/images/heartClicked.png';
+import Plate from '../assets/images/plate.png';
+import Pot from '../assets/images/pot.png';
+import PotClicked from '../assets/images/potClicked.png';
+import Heart from '../assets/images/heart.png';
+import HeartClicked from '../assets/images/heartClicked.png';
 
 
 const getRecipe = (id) => {
