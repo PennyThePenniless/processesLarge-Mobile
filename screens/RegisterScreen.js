@@ -67,7 +67,7 @@ export default class LoginScreen extends Component {
                 }}
                 secureTextEntry={true}>
                 </TextInput>
-                <View style= {{alignItems: 'center'}}>
+                
                 <TouchableOpacity style= {styles.signButton}
                 onPress={this.handleRegister}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
@@ -77,7 +77,7 @@ export default class LoginScreen extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500',textAlign: 'center', textDecorationLine: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
-            </View>
+            
             </View>
             </View>
            </ScrollView> 
