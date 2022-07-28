@@ -140,14 +140,12 @@ export default class LoginScreen extends Component {
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
       if(res.status == 200) { //Registration successful
-        const storeData = async (value) => {
-        try {
-          const jsonValue = JSON.stringify(value)
-           await AsyncStorage.setItem('@storage_Key', jsonValue)
-      } catch (e) {
-        Alert.alert('something went wrong');
-  }
-}
+        try{
+          const username = await AsyncStorage.getItem(res.data.username);
+        }
+        catch(error){
+          Alert.alert('something went wrong');
+        }
         this.props.navigation.navigate('Search');
       }
       else if (res.status == 409) { //something problably already exist
