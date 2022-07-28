@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList,Image } from 'react-native';
 
 
 import {RegularList} from "../assets/Regularlist.js";
