@@ -42,15 +42,7 @@ constructor()
     super()
     this.state = 
     {
-      title: object.title,
-    spoonacularID: 0 ,
-    instructions: '',
-    recipePhoto: '',
-    ingredients: ['','',''],
-    numMade: 0,
-    numRatings:0 ,
-    numSaved:0 ,
-    rating:0 ,
+      recipe: this.props.navigation.state.params.recip
     }
   }
 

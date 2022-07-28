@@ -30,7 +30,9 @@ export default class ResultsList extends React.Component {
         return (
           <View style= {styles.shadowCard}>
             <TouchableHighlight style= {{borderRadius: 10}}activeOpacity={0.8}
-                                underlayColor="#000000" onPress={() => this.props.navigation.navigate('FoodScreen')}>
+                                underlayColor="#000000" onPress={() => this.props.navigation.navigate('FoodScreen', {
+                                  recipe: item
+                                })}>
             <View style= {styles.savedRecipes}>
             <View style= {{flex: 6/8, flexDirection: 'row', marginBottom: '3%'}}>
                 <View style= {{flex: 3/6}}>
