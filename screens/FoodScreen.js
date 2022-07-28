@@ -177,16 +177,16 @@ const styles = StyleSheet.create({
         //flex: 1,
         textAlign: 'center',
         //backgroundColor: 'blue'
-        borderWidth: 1,
-        borderColor: '#7c5227',
+        borderTopWidth: 1,
+        borderTopColor: '#7c5227',
         color: '#7c5227',
     },
     ingredients: {
         flex: 2,
         //backgroundColor: 'purple'
-        borderWidth: 1,
+        borderTopWidth: 1,
         borderTopColor: '#7c5227',
-        fontColor: '#7c5227',
+        color: '#7c5227',
     },
     instructions: {
         flex: 1,
