@@ -1,12 +1,8 @@
 import React, { Component, useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView,Alert } from 'react-native';
 import { AsyncStorage } from 'react-native';
-
-
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "", global.confirmPassword ="";
-
 export default class LoginScreen extends Component {
-
   constructor()
   {
     super()
@@ -20,13 +16,11 @@ export default class LoginScreen extends Component {
        message: ' '
     }
   }
-
   render() {
-
     return (
       <View style= {styles.mainContainer}>
-        <ScrollView style={{flex:1}}>
-        <View style ={styles.container}>
+        <ScrollView>
+        <View style= {styles.container}>
           <View style={styles.registerBox}>
                 <Text style={styles.login}>Sign Up</Text>
                 <View style={{margin: '5%'}}>
@@ -93,7 +87,6 @@ export default class LoginScreen extends Component {
         </View>
     )
   }
-
   handleRegister= async () => {
     /*
     try{
@@ -137,18 +130,14 @@ export default class LoginScreen extends Component {
     try {
       //Send register request
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
-      {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
-      res = response;
-      if(res.status == 200) { //Registration successful
-        try{
-          const username = await AsyncStorage.getItem(res.data.username);
-        }
-        catch(error){
-          Alert.alert('something went wrong');
-        }
-        this.props.navigation.navigate('Search');
-      }
-      else if (res.status == 409) { //something problably already exist
+       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
+       res = response;
+       if(res.status == 200) { //Registration successful
+         localStorage.setItem("username",res.username));
+         localStorage.setItem("username",res.username);
+         this.props.navigation.navigate('Search');
+       }
+       else if (res.status == 409) { //something problably already exist
         this.setState({message: 'An account with this email already exists.' });
       }
       else{
@@ -160,7 +149,6 @@ export default class LoginScreen extends Component {
     }
   }
 }
-
 function getWidth() {
   if (Dimensions.get('window').width > Dimensions.get('window').height) {
       return Dimensions.get('window').width;
@@ -169,7 +157,6 @@ function getWidth() {
       return Dimensions.get('window').height;
   }
 }
-
 function getHeight() {
   if (Dimensions.get('window').height > Dimensions.get('window').width) {
     return Dimensions.get('window').height;
@@ -178,7 +165,6 @@ function getHeight() {
       return Dimensions.get('window').width;
   }
 }
-
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
@@ -222,14 +208,14 @@ const styles = StyleSheet.create({
         shadowRadius: 1
       },
       container: {
-        //flex: 1,
+        flex: 1,
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'center',
         margin: '3%'
       },
       registerBox: {
-        //flex: 1,
+        flex: 1,
         marginTop: getWidth() * 0.1,
         width: getWidth(),
         height: getHeight(),
