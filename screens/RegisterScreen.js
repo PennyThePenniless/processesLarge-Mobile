@@ -84,7 +84,7 @@ export default class LoginScreen extends Component {
 
   handleRegister= async () => {
     try{
-    Alert.alert(AsyncStorage.getItem('username'));
+    Alert.alert(await AsyncStorage.getItem('username'));
     }
     catch(error){
       Alert.alert('error');
