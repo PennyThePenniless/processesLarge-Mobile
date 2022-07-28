@@ -23,34 +23,6 @@ const getRecipe = (id) => {
     })
 };
 
-    let recipeName = "Test";
-    const [made, setMade] = useState();
-    const [saved, setSaved] = useState();
-
-    useEffect( () => {
-        if(made) {
-            madeSrc = PotClicked
-            //add recipe to db
-        }
-        else {
-            madeSrc = Pot
-            //remove recipe from db
-        }
-    }, [made]);
-
-    useEffect( () => {
-        if(saved) {
-            let savedSrc = HeartClicked
-            //add recipe to db
-        }
-        else {
-            let savedSrc = Heart
-            //remove from db
-        }
-    }, [saved]);
-
-    let madeSrc = PotClicked;
-    let savedSrc = HeartClicked;
 
 global.object = getRecipe();
 
