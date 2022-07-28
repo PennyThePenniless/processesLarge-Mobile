@@ -32,7 +32,11 @@ list = list.map(x => {
   return ({ key: x });
 })
 
- let recipeName = "Test";
+ 
+
+export default class FoodScreen extends Component {
+    
+     let recipeName = "Test";
     const [made, setMade] = useState();
     const [saved, setSaved] = useState();
 
@@ -60,8 +64,6 @@ list = list.map(x => {
 
     let madeSrc = PotClicked;
     let savedSrc = HeartClicked;
-
-export default class FoodScreen extends Component {
    
  
 constructor() 
