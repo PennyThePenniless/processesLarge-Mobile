@@ -73,7 +73,7 @@ export default class LoginScreen extends Component {
     );
     }
     catch(error){
-      Alert.alert('error);
+      Alert.alert('error');
     }
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
