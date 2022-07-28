@@ -133,7 +133,6 @@ export default class LoginScreen extends Component {
        {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
        res = response;
        if(res.status == 200) { //Registration successful
-         localStorage.setItem("username",res.username));
          localStorage.setItem("username",res.username);
          this.props.navigation.navigate('Search');
        }
