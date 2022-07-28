@@ -180,7 +180,7 @@ getSearchResults = () => {
               <View style={styles.navigator}>
                  <View style={{borderWidth: 1,flex:1}}>
                   <TouchableOpacity>
-                    <Image source={require('../assets/images/search.png')}/>
+                    <Image style={styles.tinyLogo} source={require('../assets/images/search.png')}/>
                   </TouchableOpacity>
                  </View>
                  <View style={{borderWidth: 1,flex:1}}>
