@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
       text: {
         //fontFamily: '',
         fontSize: 20,
-        fontWeight: '600',
+        //fontWeight: '600',
         color: '#7C5227',
         padding: 5,
         flexWrap: 'wrap'
