@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
       },
       registerBox: {
         flex: 1,
-        marginTop: getWidth() * 0.1,
+       // marginTop: getWidth() * 0.1,
         width: getWidth(),
         height: getHeight(),
         borderRadius: 10, 
