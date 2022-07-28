@@ -21,6 +21,11 @@ export default class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate('Register')}>
                   <Text style= {{color: '#FEFAE0', fontSize: Dimensions.get('window').width * 0.08}}>Register</Text>
                   </TouchableOpacity>
+                   <TouchableOpacity 
+                  style= {styles.signButton}
+                  onPress={() => this.props.navigation.navigate('Search')}>
+                  <Text style= {{color: '#FEFAE0', fontSize: Dimensions.get('window').width * 0.08}}>Search</Text>
+                  </TouchableOpacity>
                 </View>
             </View>
         </View>
