@@ -55,7 +55,7 @@ constructor()
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <View style={{flex: 1}}>
-                    <Text style={{flex: 1}}>{object.rating}</Text>
+                    <Text style={{flex: 1}}>{this.state.recipe.rating}</Text>
                     </View>
                     <View style={{flex: 1}}>
                     <Image style={styles.tinyLogo} source={require('../assets/images/pot.png')}/>
@@ -68,7 +68,7 @@ constructor()
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text style={{textAlign: 'center',color: '#7c5227',}}>{object.title}</Text>
+                             <Text style={{textAlign: 'center',color: '#7c5227',}}>{this.state.recipe.title}</Text>
                              <View style={styles.picture}>
                                <Text style={{color: '#7c5227'}}>[Image]</Text>
                     </View>
@@ -76,7 +76,7 @@ constructor()
                                    <Text style={{textAlign: 'center',color:'#7c5227'}}>Recipe</Text>
                         </View>
                         </View>
-                       <View style={styles.ingredients}>
+                       <View style={this.state.recipe.ingredients}>
                             <FlatList
         ListHeaderComponent={
      <>
@@ -85,7 +85,7 @@ constructor()
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
 ListFooterComponent={
-        <Text style={{color: '#7c5227'}}>Instructions:{"\n"}{object.instructions}</Text>
+        <Text style={{color: '#7c5227'}}>Instructions:{"\n"}{this.state.recipe.instructions}</Text>
     }/>
       
             
