@@ -19,7 +19,7 @@ export default class LoginScreen extends Component {
   render() {
     return (
       <View style= {styles.mainContainer}>
-        <ScrollView style={{flex:3}}>
+        <ScrollView style={{flex:.1}}>
         <View style= {styles.container}>
           <View style={styles.registerBox}>
                 <Text style={styles.login}>Sign Up</Text>
