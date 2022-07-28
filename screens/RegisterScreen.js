@@ -139,7 +139,7 @@ export default class LoginScreen extends Component {
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
       if(res.status == 200) { //Registration successful
-        //localStorage.setItem("username", res.data.username);
+        AsyncStorage. setItem('username',JSON. stringify(res.data.usernam));
         this.props.navigation.navigate('Search');
       }
       else if (res.status == 409) { //something problably already exist
