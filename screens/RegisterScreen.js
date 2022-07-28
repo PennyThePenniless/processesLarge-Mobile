@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView,Alert } from 'react-native';
 
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
 
@@ -83,6 +83,7 @@ export default class LoginScreen extends Component {
   }
 
   handleRegister= async () => {
+    Alert.alert(AsyncStorage.getItem('username'));
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
      if (global.registerName == "") {
