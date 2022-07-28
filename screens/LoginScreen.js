@@ -105,14 +105,17 @@ export default class LoginScreen extends Component {
        /*global.firstName = res.firstName;
         global.lastName = res.lastName;
         global.userId = res.id;*/
-        try{
-        await AsyncStorage.setItem(
-      'username',
-      res.data.username);
-        }
-        catch(error){
-          Alert.alert('Something went wrong');
-        }
+        const setData = async () => {
+    try {
+      const username = await AsyncStorage.getItem(res.data.username);
+
+      // Log here
+      
+
+    } catch (error) {
+      Alert.alert('something went wrong');
+    }
+  };
         this.props.navigation.navigate('Search');
         
       }
