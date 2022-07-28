@@ -113,5 +113,16 @@ const styles = StyleSheet.create({
 
         marginTop: getWidth() * 0.08,
         margin: '5%'
-      }
+      },
+    navigator: {
+      flex: .4,
+      backgroundColor: 'white',
+      flexDirection: 'row'
+   },
+   tinyLogo: {
+    width: 50,
+    height: 50,
+    marginTop: 15,
+    marginBottom: 15,
+  },
 });
