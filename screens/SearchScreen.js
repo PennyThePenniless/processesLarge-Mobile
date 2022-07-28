@@ -178,6 +178,10 @@ getSearchResults = () => {
                 </View>
                 </View>
               <View style={styles.navigator}>
+                 <View style={{borderWidth: 1,flex:1}}>
+                 </View>
+                 <View style={{borderWidth: 1,flex:1}}>
+                 </View>
               </View>
             </View>
         )
@@ -260,7 +264,8 @@ const styles = StyleSheet.create({
     },
    navigator: {
       flex: .4,
-      backgroundColor: 'white'
+      backgroundColor: 'white',
+      flexDirection: 'row'
    }
     
 
