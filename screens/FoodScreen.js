@@ -1,6 +1,6 @@
 
 import React, {Component, useState, useEffect} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, FlatList,Image } from 'react-native';
 import Plate from '../assets/images/plate.png';
 import Pot from '../assets/images/pot.png';
 import PotClicked from '../assets/images/potClicked.png';
@@ -64,7 +64,7 @@ constructor()
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <Text style={{flex: 1}}>{object.rating}</Text>
-                    <img style={{flex: 1}} src={Plate}/>
+                    <Image style={{flex: 1}} source={Plate}/>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
