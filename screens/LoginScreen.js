@@ -66,6 +66,10 @@ export default class LoginScreen extends Component {
   }
   
   handleLogin = async () => {
+    await AsyncStorage.setItem(
+      'username',
+      'this is a test'
+    );
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
     if (global.email.match(regex) == null) {
@@ -98,7 +102,7 @@ export default class LoginScreen extends Component {
         global.userId = res.id;*/
         await AsyncStorage.setItem(
       'username',
-      res.data.username
+      'this is a test'
     );
         this.props.navigation.navigate('Search');
         
