@@ -179,8 +179,13 @@ getSearchResults = () => {
                 </View>
               <View style={styles.navigator}>
                  <View style={{borderWidth: 1,flex:1}}>
+                  <TouchableOpacity>
+                    <Image source={require('../images/search.png/')/>
+                  </TouchableOpacity>
                  </View>
                  <View style={{borderWidth: 1,flex:1}}>
+                    <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Account')}>
+                    </TouchableOpacity>
                  </View>
               </View>
             </View>
