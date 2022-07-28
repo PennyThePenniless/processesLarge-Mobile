@@ -68,7 +68,7 @@ constructor()
                         </View>
                        <View style={styles.ingredients}>
                             <FlatList
-        LisHeaderComponent={
+        ListHeaderComponent={
      <>
         <Text style={{color: '#7c5227'}}>Ingredients:</Text>
      </> }
