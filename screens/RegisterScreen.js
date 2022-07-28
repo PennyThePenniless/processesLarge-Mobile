@@ -26,7 +26,7 @@ export default class LoginScreen extends Component {
     return (
       <View style= {styles.mainContainer}>
         <ScrollView style={{flex:1}}>
-        
+        <View style ={styles.container}>
           <View style={styles.registerBox}>
                 <Text style={styles.login}>Sign Up</Text>
                 <View style={{margin: '5%'}}>
@@ -86,7 +86,7 @@ export default class LoginScreen extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500',textAlign: 'center', margin: '5%', textDecorationLine: 'underline'}}>Already have a account? Click here to log in</Text>
             </TouchableOpacity>
-            
+            </View>
             </View>
             </View>
             </ScrollView>
