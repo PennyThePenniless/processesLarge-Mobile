@@ -42,7 +42,7 @@ constructor()
     super()
     this.state = 
     {
-      recipe: this.props.navigation.state.params.recip
+      recipe: this.props.navigation.state.params.recipe
     }
   }
 
