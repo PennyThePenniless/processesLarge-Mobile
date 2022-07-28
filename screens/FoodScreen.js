@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     },
     item: {
     padding: 10,
-    fontSize: 18,
+    fontSize: 12,
     height: 44,
     color: '#7c5227',
   },
