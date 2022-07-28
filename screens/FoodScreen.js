@@ -66,7 +66,7 @@ constructor()
                                <Text style={{color: '#7c5227'}}>[Image]</Text>
                     </View>
                         <View style={styles.recipe}>
-                                   <Text style={{alignContent: 'center',color:'#7c5227'}}>Recipe</Text>
+                                   <Text style={{textContent: 'center',color:'#7c5227'}}>Recipe</Text>
                         </View>
                         </View>
                        <View style={styles.ingredients}>
