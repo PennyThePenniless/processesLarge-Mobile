@@ -202,7 +202,8 @@ const styles = StyleSheet.create({
         //margin: 20,
         shadowColor: 'rgba(0,0,0,0.25)',
         shadowOffset: {width: -1, height: -1},
-        shadowRadius: 1
+        shadowRadius: 1,
+        justifyContent: 'center'
       },
       container: {
         flex: 1,
