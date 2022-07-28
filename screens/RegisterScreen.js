@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView,Alert } from 'react-native';
 import { AsyncStorage } from 'react-native';
 
-global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
+global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "", global.confirmPassword ="";
 
 export default class LoginScreen extends Component {
 
@@ -15,6 +15,7 @@ export default class LoginScreen extends Component {
       isUserNameFocus: false,
       isEmailFocus: false,
       isPasswordFocus: false,
+      isConfirmPassword: false,
        message: ' '
     }
   }
@@ -56,6 +57,15 @@ export default class LoginScreen extends Component {
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isPasswordFocus: true})}
                 onBlur= {() => this.setState({isPasswordFocus: false})}
+                onChangeText={(val) => {
+                  global.registerPassword = val;
+                }}
+                secureTextEntry={true}>
+                </TextInput>
+                <Text style= {[styles.text, {marginRight:'60%'}]}>Confirm Password</Text>
+                <TextInput style={[styles.textInput, {backgroundColor: this.state.isConfirmPasswordFocus ? '#FEFAE0' : '#9aa871'}]}
+                onFocus= {() => this.setState({isConfirmPasswordFocus: true})}
+                onBlur= {() => this.setState({isConfirmPasswordFocus: false})}
                 onChangeText={(val) => {
                   global.registerPassword = val;
                 }}
@@ -109,6 +119,14 @@ export default class LoginScreen extends Component {
     }
     else if (global.registerPassword == "") {
       this.setState({message: 'Please enter a password.' });
+      return;
+    }
+    else if (global.confirmPassword == "") {
+      this.setState({message: 'Please confirm a password.' });
+      return;
+    }
+    if (global.confirmPassword != global.registerPassword) {
+      this.setState({message: 'Passwords must match' });
       return;
     }
     var obj = {username: global.registerUserName, displayName: global.registerName, password: global.registerPassword, email: global.registerEmail};
