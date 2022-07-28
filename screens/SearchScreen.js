@@ -144,8 +144,8 @@ id: 1, data: []},
                 <View style= {styles.container}>
                     <View style= {{height: getHeight() * 0.25, width: '100%', backgroundColor: '#FEFAE0'}}>
                     <View style={styles.header}>
-                        <View style= {{ flex: 3/5}}>
-                            <View style= {{flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                        <View style= {{ flex: 2.5/5}}>
+                            <View style= {{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <TextInput style={[styles.textInput]} 
                                 onChangeText={this.handleChange} 
                                 placeholder="Seperate ingredients with a comma"/>
@@ -157,26 +157,29 @@ id: 1, data: []},
                             </TouchableHighlight> 
                             </View>
                         </View>
-                        <View style= {{flex: 2/5, flexDirection: 'row', margin: '2%', marginRight: '8%', justifyContent: 'flex-end', alignItems: 'center'}}>
+                        <View style= {{flex: 2/5, flexDirection: 'row', margin: '2%', marginRight: '8%', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <View style= {{marginLeft: '5%', alignItems: 'center', justifyContent: 'space-evenly'}}>
+                        <TouchableHighlight style= {styles.searchButton} onPress={this.getRecipes}>
+                                <Text style= {{fontSize: 16, width: '100%', fontWeight: '700', textAlign: 'center', color: '#FEFAE0'}}>Search for Recipes</Text>
+                            </TouchableHighlight> 
+                        </View>
+                            <View>
+                            </View>
+                            <View style= {{flex: 1, flexDirection: 'row', marginLeft: '8%', justifyContent: 'flex-end', alignItems: 'center'}}>
                             <Text style= {{fontSize: 15, margin: '0.5%', color: this.state.isExcluded ? 'rgba(239,81,32, 0.80)' : '#A5B082', fontWeight: '600'}}>{this.state.isExcluded ? "Exclude" : "Include"}</Text>
                             <Switch
                                 onValueChange={(val) => {
-                                    console.log(val)
                                     this.setState({isExcluded: val});
                                 }}
                                 value={this.state.isExcluded}
                                 trackColor={{true: "rgba(239,81,32, 0.60)", false: "#CCD5AE"}}
                                 ios_backgroundColor="#CCD5AE"
                                 thumbColor={"#7C5227"}/>
+                            </View>
                         </View>
                     </View>
                     </View>
                     <View style={styles.list}>
-                        <View style= {{alignItems: 'center'}}>
-                        <TouchableHighlight style= {styles.searchButton} onPress={this.getRecipes}>
-                                <Text style= {{fontSize: 20, width: '100%', fontWeight: '700', textAlign: 'center', color: '#FEFAE0'}}>Search for Recipes</Text>
-                            </TouchableHighlight> 
-                        </View>
                         <View style= {{flex: 1, width: getWidth() * 0.95, flexDirection: 'column', margin:'3%', justifyContent: 'center', alignItems: 'center' }}>
                             <View style= {{flex: 1, width: '100%'}}>
                             <SectionList
@@ -301,7 +304,7 @@ const styles = StyleSheet.create({
         margin: '1%',
         padding: 10,
         backgroundColor: "#7C5227",
-        width: '80%',
+        width: '70%',
         borderRadius: 5
       },
       foodBox: {
