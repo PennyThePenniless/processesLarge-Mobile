@@ -107,7 +107,7 @@ export default class SearchScreen extends Component {
 
 
         
-    }
+    
     handleChange = (text) => {
         strInput = text;
         //setInput(strInput);
