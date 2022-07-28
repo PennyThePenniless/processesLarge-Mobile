@@ -29,6 +29,82 @@ export default class SearchScreen extends Component {
         setShowResults(true)*/
         const arr = strInput.split(' ').join('')
         const jsonArr = arr.split(',');
+       
+
+        // VALIDATE INGREDIENT (or maybe move this to search bar)
+
+        // IF VALID
+        // State variable are asynchronous, so we make a copy to get the updated value
+        const newIngredients = {"ingredients":jsonArr};
+        
+
+        // API CALL
+        (async () => {
+            const response = await axios.post("/homepage/findByIngredients", {
+                ingredients: newIngredients
+            }).then((response) => {
+
+                // Parse data
+                const newResults = [];
+                const ids = [];
+
+                response.data.forEach((rec) => {
+                    // Add id to ids
+                    ids.push(rec.id);
+
+                    // Get ingredients from rec
+                    const ingredientList = []
+                    rec.missedIngredients.forEach((ing) => {
+                        ingredientList.push(ing.name);
+                    });
+                    rec.usedIngredients.forEach((ing) => {
+                        ingredientList.push(ing.name);
+                    });
+
+                    // Build recipe object
+                    const recipe = {
+                        title: rec.title,
+                        image: rec.image,
+                        id: rec.id,
+                        ingredients: ingredientList
+                    }
+
+                    newResults.push(recipe);
+                    localStorage.setItem(recipe.id, JSON.stringify(recipe)); // TODO: temp
+                });
+
+                // (async () => {const response = await axios.post("/homepage/getInstructionsBulk", {
+                //         ids: ids.toString()
+                //     }).then((response) => {
+                        
+                        // response.data.forEach((rec, i) => {
+                        //     // Add instructions
+                        //     newResults[i].instructions = rec.instructions;
+
+                        //     // Add to storage
+                        //     localStorage.setItem(newResults[i].id, newResults[i]);
+                        // });
+
+                        console.log(newResults);
+                        setResults(newResults);
+                //     }).catch((error) => {
+                //         // What to do when search fails?
+                //         console.log("inner error");
+                //         // console.log(`${error.response.status}\n${error.response}`);
+                //     });
+                // })();
+            
+            }).catch((error) => {
+                // What to do when search fails?
+                // console.log(`${error.response.status}\n${error.response}`);
+                console.log("outer error");
+            });
+        })();
+        
+
+        // FILTER TO ENSURE REQUIRED ON HERE
+        // SET RESULTS
+    }
          
         
                 
