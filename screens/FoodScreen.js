@@ -64,7 +64,7 @@ constructor()
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <Text style={{flex: 1}}>{object.rating}</Text>
-                    <Image style={{flex: 1}} source={Plate}/>
+                    <Image style={styles.tinyLogo} source={Plate}/>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
@@ -221,6 +221,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     height: 44,
     color: '#7c5227',
+  },
+    tinyLogo: {
+    width: 50,
+    height: 50,
   },
     
 
