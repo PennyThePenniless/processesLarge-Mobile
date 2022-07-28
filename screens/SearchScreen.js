@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
    navigator: {
-      flex: .1,
+      flex: .4,
       backgroundColor: 'white'
    }
     
