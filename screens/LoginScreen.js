@@ -93,9 +93,10 @@ export default class LoginScreen extends Component {
       }
       else //Success
       {
-       global.firstName = res.firstName;
+       /*global.firstName = res.firstName;
         global.lastName = res.lastName;
-        global.userId = res.id;
+        global.userId = res.id;*/
+        
         this.props.navigation.navigate('Search');
         
       }
