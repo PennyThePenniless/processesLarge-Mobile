@@ -178,13 +178,13 @@ getSearchResults = () => {
                 </View>
                 </View>
               <View style={styles.navigator}>
-                 <View style={{borderWidth: 1,flex:1}}>
+                 <View style={{borderWidth: 1,flex:1,justifyContent:'center'}}>
                   <TouchableOpacity>
                     <Text>Search</Text>
                   </TouchableOpacity>
                  </View>
-                 <View style={{borderWidth: 1,flex:1}}>
-                    <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Account')}>
+                 <View style={{borderWidth: 1,flex:1,justifyContent:'center'}}>
+                    <TouchableOpacity style={borderWidth: 1,flex:1,justifyContent:'center'} onPress={() => this.props.navigation.navigate('Account')}>
                       <Text>Account</Text>
                     </TouchableOpacity>
                  </View>
