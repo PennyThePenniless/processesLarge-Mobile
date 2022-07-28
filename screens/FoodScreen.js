@@ -65,6 +65,9 @@ constructor()
                              <View style={styles.picture}>
                                <Text style={{color: '#7c5227'}}>[Image]</Text>
                     </View>
+                        <View style={styles.recipe}>
+                                   <Text>Recipe</Text>
+                        </View>
                         </View>
                        <View style={styles.ingredients}>
                             <FlatList
@@ -176,13 +179,13 @@ const styles = StyleSheet.create({
         //backgroundColor: 'blue'
         borderWidth: 1,
         borderColor: '#7c5227',
-        fontColor: '#7c5227',
+        color: '#7c5227',
     },
     ingredients: {
         flex: 2,
         //backgroundColor: 'purple'
         borderWidth: 1,
-        borderColor: '#7c5227',
+        borderTopColor: '#7c5227',
         fontColor: '#7c5227',
     },
     instructions: {
