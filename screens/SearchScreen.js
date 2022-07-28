@@ -23,8 +23,26 @@ export default class SearchScreen extends Component {
         const arr = strInput.split(' ').join('')
         const jsonArr = arr.split(',');
         
-        alert(jsonArr);
-        }
+        
+        (async () => {
+            const response = await axios.get("/homepage/findByIngredients", {
+                ingredients: ingredients
+            }).then( (response) => {
+                // Success
+                if (response.status === 200) {
+                    alert("response: " + response.data);
+                }
+            }).catch((error) => {
+                alert("error");
+            });
+        })();
+   
+                
+                
+
+
+        
+    }
     handleChange = (text) => {
         strInput = text;
         //setInput(strInput);
