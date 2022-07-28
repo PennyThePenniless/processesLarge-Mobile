@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
         margin: '5%'
       },
     navigator: {
-      flex: .4,
+      flex: .8,
       backgroundColor: 'white',
       flexDirection: 'row'
    },
