@@ -24,7 +24,7 @@ export default class LoginScreen extends Component {
         <View style= {styles.container}>
           <View style={styles.registerBox}>
                 <Text style={styles.login}>Sign Up</Text>
-                <View style={{}}>
+                
                 <Text style= {styles.text}>Display Name</Text>
                 <TextInput style={[styles.textInput, {backgroundColor: this.state.isRegisterNameFocus ? '#FEFAE0' : '#9aa871'}]}
                 onFocus= {() => this.setState({isRegisterNameFocus: true})}
@@ -72,7 +72,7 @@ export default class LoginScreen extends Component {
                 onPress={this.handleRegister}>
                 <Text style= {{color: 'white', fontSize: 20, textAlign: 'center'}}>Sign Up</Text>
                 </TouchableOpacity>
-                </View>
+                
             <Text style={[styles.text, {textAlign: 'center', color: '#EF5120', fontSize: 16, flexWrap: 'wrap'}]}>{this.state.message} </Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style= {{color: '#7C5227', fontSize: 15, fontWeight: '500',textAlign: 'center', textDecorationLine: 'underline'}}>Already have a account? Click here to log in</Text>
