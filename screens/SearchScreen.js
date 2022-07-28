@@ -11,7 +11,7 @@ global.strInput = "", global.setInput = "";
 
 
 
-const input = { "ingredients" : ["Egg", "Milk", "Flour"]};
+
 
 
 export default class SearchScreen extends Component {
