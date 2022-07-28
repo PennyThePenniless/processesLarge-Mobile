@@ -180,11 +180,12 @@ getSearchResults = () => {
               <View style={styles.navigator}>
                  <View style={{borderWidth: 1,flex:1}}>
                   <TouchableOpacity>
-                    <Image source={require('../images/search.png/')/>
+                    <Image source={require('../assets/images/search.png')}/>
                   </TouchableOpacity>
                  </View>
                  <View style={{borderWidth: 1,flex:1}}>
                     <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Account')}>
+                       <Image style={styles.tinyLogo} source={require('../assets/images/account.png')}/>
                     </TouchableOpacity>
                  </View>
               </View>
