@@ -64,7 +64,7 @@ constructor()
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <Text style={{flex: 1}}>{object.rating}</Text>
-                    <Text style={{flex: 1}}>You made this recipe</Text>
+                    <img style={{flex: 1}} src={Plate}/>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
