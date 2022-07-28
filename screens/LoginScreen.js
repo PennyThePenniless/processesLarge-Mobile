@@ -99,11 +99,11 @@ export default class LoginScreen extends Component {
       {
        /*global.firstName = res.firstName;
         global.lastName = res.lastName;
-        global.userId = res.id;*/
+        global.userId = res.id;
         await AsyncStorage.setItem(
       'username',
-      'this is a test'
-    );
+      'res.data.username'
+    );*/
         this.props.navigation.navigate('Search');
         
       }
