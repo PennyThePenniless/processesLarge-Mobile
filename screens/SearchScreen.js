@@ -29,8 +29,23 @@ export default class SearchScreen extends Component {
         setShowResults(true)*/
         const arr = strInput.split(' ').join('')
         const jsonArr = arr.split(',');
-         alert(json.Arr);
-   
+         
+        const obj = {"ingredients":jsonArr};
+    var js = JSON.stringify(obj);
+    try {
+      //Send Login request
+      const response = await fetch('https://processes-recipe.herokuapp.com/findByIngredients',
+      {method:'POST',body:obj,headers:{'Content-Type': 'application/json'}});
+
+      res = response;
+      var _results = JSON.parse(await res.text());
+      if( res.status != 200 )
+      {
+        Alert.alert('something went wrong');
+      }
+      else{
+         Alert.alert(res.body);
+      }
                 
                 
 
