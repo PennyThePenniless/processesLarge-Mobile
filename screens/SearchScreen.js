@@ -223,6 +223,7 @@ getRecipes = async () => {
         const response = await fetch('https://processes-recipe.herokuapp.com/homepage/findByIngredients',
         {method:'POST', body:js,headers:{'Content-Type': 'application/json'}});
         res = response;
+        console.log(response.json);
         var _results = JSON.parse(await res.text());
         if( res.status == 200 ) //Success
         {

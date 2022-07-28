@@ -30,7 +30,7 @@ export default class ResultsList extends React.Component {
         return (
           <View style= {styles.shadowCard}>
             <TouchableHighlight style= {{borderRadius: 10}}activeOpacity={0.8}
-                                underlayColor="#000000" onPress={() => this.props.navigation.navigate('FoodScreen', {
+                                underlayColor="#000000" onPress={() => this.props.navigation.navigate('Food', {
                                   recipe: item
                                 })}>
             <View style= {styles.savedRecipes}>
@@ -45,8 +45,8 @@ export default class ResultsList extends React.Component {
                   <View style= {{flex:3/6}}>
                     <Text 
                     ellipsizeMode= {'tail'}
-                    numberOfLines= {3}
-                    style={{flex: 1, margin: '3%', textAlign: 'center', fontSize: 24, fontWeight:'500', color: '#7C5227'}}>{item.title}</Text>
+                    numberOfLines= {4}
+                    style={{flex: 1, margin: '2%', textAlign: 'center', fontSize: 22, fontWeight:'500', color: '#7C5227'}}>{item.title}</Text>
                   </View>
                     <View style= {{flex: 3/6}}>
                   </View>
@@ -195,8 +195,8 @@ function populate (recipe) {
             id: recipe[i].id,
             title: recipe[i].title,
             image: recipe[i].image,
-            usedIngridientCount: recipe[i].usedIngredientCount >= 0 ? recipe[i].usedIngredientCount : 0,
-            missingIngridients: recipe[i].missedIngredientCount >= 0 ? recipe[i].usedIngredientCount : 0,
+            usedIngridientCount: recipe[i].usedIngredientCount,
+            missingIngridients: recipe[i].usedIngredientCount,
             likes: recipe[i].likes,
             rawInput: recipe[i],
             made: 0

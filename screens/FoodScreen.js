@@ -37,9 +37,9 @@ export default class FoodScreen extends Component {
     
    
  
-constructor() 
+constructor(props) 
   {
-    super()
+    super(props)
     this.state = 
     {
       recipe: this.props.navigation.state.params.recipe
@@ -68,19 +68,21 @@ constructor()
                 <View style={styles.box3}>
                     
                         <View style={styles.nutrition}>
-                             <Text style={{textAlign: 'center',color: '#7c5227',}}>{this.state.recipe.title}</Text>
-                             <View style={styles.picture}>
-                               <Text style={{color: '#7c5227'}}>[Image]</Text>
+                             <Text style={{textAlign: 'center', fontSize: ' 22', fontWeight: '600', color: '#7c5227',}}>{this.state.recipe.title}</Text>
+                             <View>
+                                <Image 
+                                style={{width: '100%', height: '80%', resizeMode: 'cover'}}
+                                source={{uri:this.state.recipe.image}}></Image>
                     </View>
                         <View style={styles.recipe}>
-                                   <Text style={{textAlign: 'center',color:'#7c5227'}}>Recipe</Text>
+                                   <Text style={{textAlign: 'center', fontSize: 20, color:'#7c5227'}}>Recipe</Text>
                         </View>
                         </View>
                        <View style={this.state.recipe.ingredients}>
                             <FlatList
         ListHeaderComponent={
      <>
-        <Text style={{color: '#7c5227'}}>Ingredients:</Text>
+        <Text style={{color: '#7c5227', fontSize: 15}}>Ingredients:</Text>
      </> }
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
