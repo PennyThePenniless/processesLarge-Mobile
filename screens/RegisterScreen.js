@@ -138,7 +138,7 @@ export default class LoginScreen extends Component {
       const response = await fetch('https://processes-recipe.herokuapp.com/user/register',
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
-      if(res.status == 201) { //Registration successful
+      if(res.status == 200) { //Registration successful
         try{
         await AsyncStorage.setItem(
       'username',
