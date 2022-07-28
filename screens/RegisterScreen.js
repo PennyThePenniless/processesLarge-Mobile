@@ -171,9 +171,9 @@ const styles = StyleSheet.create({
         //fontFamily: '',
         fontSize: 54,
         textAlign: 'center',
-        fontWeight: '500',
+        //fontWeight: '500',
         color: '#7C5227',
-        margin: '5%'
+        //margin: '5%'
       },
       text: {
         //fontFamily: '',
