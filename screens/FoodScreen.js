@@ -69,9 +69,9 @@ constructor()
                        <View style={styles.ingredients}>
                             <FlatList
         LisHeaderComponent={
-     
+     <>
         <Text style={{color: '#7c5227'}}>Ingredients:</Text>
-      }
+     </> }
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
 ListFooterComponent={
