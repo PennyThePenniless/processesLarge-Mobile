@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView,Alert } from 'react-native';
+import { AsyncStorage } from 'react-native';
 
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "";
 
