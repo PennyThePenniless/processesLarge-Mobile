@@ -16,12 +16,7 @@ global.strInput = "", global.setInput = "";
 
 export default class SearchScreen extends Component {
    
-   this.state = {
-      
-      data: [],
-
-    };
-  }
+   
    
     handleSearch = (event) => {
 
