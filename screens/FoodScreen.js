@@ -75,6 +75,7 @@ constructor()
         data={list}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
 ListFooterComponent={
+        <Text style={{color: '#7c5227'}}>Instructions:</Text>
         <Text style={{color: '#7c5227'}}>{object.instructions}</Text>
     }/>
       
