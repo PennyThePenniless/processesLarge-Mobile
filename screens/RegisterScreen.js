@@ -84,14 +84,14 @@ export default class LoginScreen extends Component {
   }
 
   handleRegister= async () => {
-    
+    /*
     try{
     const value = await AsyncStorage.getItem('username');
     Alert.alert(value);
     }
     catch(error){
       Alert.alert('error');
-    }
+    }*/
     
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
@@ -121,6 +121,14 @@ export default class LoginScreen extends Component {
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
       if(res.status == 201) { //Registration successful
+        try{
+        await AsyncStorage.setItem(
+      'username',
+      res.data.username);
+        }
+        catch(error){
+          Alert.alert('Something went wrong');
+        }
         this.props.navigation.navigate('Search');
       }
       else if (res.status == 409) { //something problably already exist
