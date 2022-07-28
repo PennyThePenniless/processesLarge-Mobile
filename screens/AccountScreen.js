@@ -41,6 +41,18 @@ export default class AccountScreen extends Component {
                       </View>
                       </View>
                 </ScrollView>
+                <View style={styles.navigator}>
+                 <View style={{borderWidth: 1,flex:1,justifyContent:'center'}}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
+                    <Text>Search</Text>
+                  </TouchableOpacity>
+                 </View>
+                 <View style={{borderWidth: 1,flex:1,justifyContent:'center'}}>
+                    <TouchableOpacity style={{borderWidth: 1,flex:1,justifyContent:'center'}} >
+                      <Text>Account</Text>
+                    </TouchableOpacity>
+                 </View>
+              </View>
             </View>
         )
     }
