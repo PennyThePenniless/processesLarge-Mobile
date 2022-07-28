@@ -1,6 +1,11 @@
 
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, FlatList } from 'react-native';
+import Plate from "../images/plate.png";
+import Pot from "../images/pot.png";
+import PotClicked from "../images/potClicked.png";
+import Heart from "../images/heart.png";
+import HeartClicked from "../images/heartClicked.png";
 
 
 const getRecipe = (id) => {
@@ -17,6 +22,35 @@ const getRecipe = (id) => {
     rating: 4,
     })
 };
+const FoodSideBar = () => {
+    let recipeName = "Test";
+    const [made, setMade] = useState();
+    const [saved, setSaved] = useState();
+
+    useEffect( () => {
+        if(made) {
+            madeSrc = PotClicked
+            //add recipe to db
+        }
+        else {
+            madeSrc = Pot
+            //remove recipe from db
+        }
+    }, [made]);
+
+    useEffect( () => {
+        if(saved) {
+            let savedSrc = HeartClicked
+            //add recipe to db
+        }
+        else {
+            let savedSrc = Heart
+            //remove from db
+        }
+    }, [saved]);
+
+    let madeSrc = PotClicked;
+    let savedSrc = HeartClicked;
 
 global.object = getRecipe();
 
