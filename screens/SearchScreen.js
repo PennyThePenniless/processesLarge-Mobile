@@ -177,6 +177,8 @@ getSearchResults = () => {
                     </ScrollView>
                 </View>
                 </View>
+              <View style={styles.navigator}>
+              </View>
             </View>
         )
     }
@@ -255,7 +257,11 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row'
-    }
+    },
+   navigator: {
+      flex: .1,
+      backgroundColor: 'white'
+   }
     
 
 });
