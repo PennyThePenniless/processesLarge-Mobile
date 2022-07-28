@@ -83,13 +83,15 @@ export default class LoginScreen extends Component {
   }
 
   handleRegister= async () => {
-    const value = await AsyncStorage.getItem('username');
+    
     try{
+    const value = await AsyncStorage.getItem('username');
     Alert.alert(value);
     }
     catch(error){
       Alert.alert('error');
     }
+    
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
      if (global.registerName == "") {
