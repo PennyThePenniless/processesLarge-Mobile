@@ -66,10 +66,15 @@ export default class LoginScreen extends Component {
   }
   
   handleLogin = async () => {
+    try{
     await AsyncStorage.setItem(
       'username',
       'this is a test'
     );
+    }
+    catch(error){
+      Alert.alert('error);
+    }
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g; //copying this from schema
     //Validate that the fields are not blank
     if (global.email.match(regex) == null) {
