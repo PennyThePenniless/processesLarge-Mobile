@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     paddingTop: 15,
+    paddingBottom: 15,
   },
     
 
