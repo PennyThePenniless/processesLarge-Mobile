@@ -18,8 +18,9 @@ export default class LoginScreen extends Component {
   }
   render() {
     return (
+      <ScrollView style={{flex:.1}}>
       <View style= {styles.mainContainer}>
-        <ScrollView style={{flex:.1}}>
+        
         <View style= {styles.container}>
           <View style={styles.registerBox}>
                 <Text style={styles.login}>Sign Up</Text>
@@ -79,8 +80,9 @@ export default class LoginScreen extends Component {
             </View>
             </View>
             </View>
-            </ScrollView>
+            
         </View>
+        </ScrollView>
     )
   }
   handleRegister= async () => {
