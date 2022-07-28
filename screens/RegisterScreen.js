@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, TextInput, View, ScrollView,Alert } from 'react-native';
 import { AsyncStorage } from 'react-native';
+import SyncStorage from 'sync-storage';
 
 global.registerName = "", global.registerUserName = "", global.registerEmail = "", global.registerPassword = "", global.confirmPassword ="";
 
@@ -139,7 +140,7 @@ export default class LoginScreen extends Component {
       {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
       res = response;
       if(res.status == 200) { //Registration successful
-        localStorage.setItem("username",res.username);
+        SyncStorage.set('username', res.data.username);
         this.props.navigation.navigate('Search');
       }
       else if (res.status == 409) { //something problably already exist
