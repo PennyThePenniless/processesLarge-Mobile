@@ -63,7 +63,7 @@ constructor()
                     <Button onPress={() => this.props.navigation.navigate('Search')}
                     title= "Go back"></Button>
                     <Text style={{flex: 1}}>{object.rating}</Text>
-                    <Image style={styles.tinyLogo} source={'../assets/images/pot.png'}/>
+                    <Image style={styles.tinyLogo} source={require('../assets/images/pot.png')}/>
                     <Text style={{flex: 1}}>You saved this recipe</Text>
                 </View>
                 <View style={styles.box3}>
