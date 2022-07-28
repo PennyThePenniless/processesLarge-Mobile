@@ -105,7 +105,7 @@ getSearchResults = () => {
                     <Text>Ingredients</Text>
                      
                      <FlatList
-                       data={ingredients}
+                       
                       />
                      
                 </View>
