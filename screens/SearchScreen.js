@@ -272,7 +272,13 @@ const styles = StyleSheet.create({
       flex: .4,
       backgroundColor: 'white',
       flexDirection: 'row'
-   }
+   },
+   tinyLogo: {
+    width: 50,
+    height: 50,
+    marginTop: 15,
+    marginBottom: 15,
+  },
     
 
 });
