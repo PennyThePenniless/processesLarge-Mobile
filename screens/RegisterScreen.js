@@ -145,7 +145,7 @@ export default class LoginScreen extends Component {
       res.data.username);
         }
         catch(error){
-          Alert.alert('Something went wrong');
+          Alert.alert(error);
         }
         this.props.navigation.navigate('Search');
       }
