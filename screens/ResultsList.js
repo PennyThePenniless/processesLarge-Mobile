@@ -10,11 +10,10 @@ export default class ResultsList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            recipe: hello(this.props.navigation.state.params.recipe),
+            recipe: populate(this.props.navigation.state.params.recipe),
             length: this.props.navigation.state.params.length
         }
     }
-
      Recipe = (recipe) => {
         return{
             id: recipe.id,
@@ -31,7 +30,7 @@ export default class ResultsList extends React.Component {
         return (
           <View style= {styles.shadowCard}>
             <TouchableHighlight style= {{borderRadius: 10}}activeOpacity={0.8}
-                                underlayColor="#000000" onPress={() => console.log('Pressed')}>
+                                underlayColor="#000000" onPress={() => this.props.navigation.navigate('FoodScreen')}>
             <View style= {styles.savedRecipes}>
             <View style= {{flex: 6/8, flexDirection: 'row', marginBottom: '3%'}}>
                 <View style= {{flex: 3/6}}>
@@ -72,33 +71,6 @@ export default class ResultsList extends React.Component {
       }
 
     render() {
-
-      const Stars = () => {
-        return (
-          <View style={{flexDirection: 'row'}}>
-          <FontIcon style={{margin: '1%'}}
-                    name='star-o'
-                    color= "#7C5227"
-                    size={28}/>
-          <FontIcon style={{margin: '1%'}}
-                    name='star-o'
-                    color= "#7C5227"
-                    size={28}/>
-          <FontIcon style={{margin: '1%'}}
-                    name='star-o'
-                    color= "#7C5227"
-                    size={28}/>
-          <FontIcon style={{margin: '1%'}}
-                    name='star-o'
-                    color= "#7C5227"
-                    size={28}/>
-          <FontIcon style={{margin: '1%'}}
-                    name='star-o'
-                    color= "#7C5227"
-                    size={28}/>
-        </View>
-        )
-      }
         return(
             <View style= {styles.mainContainer}> 
                   <View style= {{margin: 5, marginTop: 30}}>
@@ -213,8 +185,7 @@ const styles = StyleSheet.create({
       }
 });
 
-function hello (recipe) {
-    console.log('Hello');
+function populate (recipe) {
     console.log(recipe)
     let arr = [];
     for(let i = 0; i < recipe.length; i++) {

@@ -90,7 +90,7 @@ const AppNavigator = createStackNavigator({
   }
   
 },{
-  initialRouteName: "Search"
+  initialRouteName: "Home"
 });
 
 const AppContainer = createAppContainer(AppNavigator);
