@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1
       },
       container: {
-        flex: 1,
+        //flex: 1,
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'center',
