@@ -226,10 +226,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'center',
-        margin: '3%'
+        //margin: '3%'
       },
       registerBox: {
-        //flex: 1,
+        flex: 1,
         marginTop: getWidth() * 0.1,
         width: getWidth(),
         height: getHeight(),
