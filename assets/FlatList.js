@@ -1,10 +1,10 @@
-import styled from 'styled-components/native';
+import styled from "styled-components";
 
 const List = styled.View`
     overflow: auto;
 `;
 
-export const RegularList = ({
+export const FlatList = ({
     items,
     resourceName,
     itemComponent: ItemComponent

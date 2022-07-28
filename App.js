@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import ForgotScreen from './screens/ForgotScreen';
 import AccountScreen from './screens/AccountScreen';
 import AccountListScreen from './screens/AccountListScreen';
+import ResultsList from './screens/ResultsList';
 
 export default class App extends React.Component {
   
@@ -80,9 +81,16 @@ const AppNavigator = createStackNavigator({
       animationEnabled: false
     }
   },
+  ResultsList: {
+    screen: ResultsList,
+    navigationOptions: {
+      headerShown: false, // Will hide header for HomePage
+      animationEnabled: false
+    }
+  }
   
 },{
-  initialRouteName: "Home"
+  initialRouteName: "Search"
 });
 
 const AppContainer = createAppContainer(AppNavigator);

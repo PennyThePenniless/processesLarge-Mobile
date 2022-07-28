@@ -1,24 +1,15 @@
 import React, {Component, useState} from 'react';
-import { StyleSheet, Button, StatusBar, Text, TextInput, View, ScrollView, TouchableOpacity, Alert, FlatList,Image } from 'react-native';
-
-
-import {RegularList} from "../assets/Regularlist.js";
+import { Dimensions, StyleSheet, Switch, FlatList, Text, TextInput, View, SectionList,ScrollView} from 'react-native';
 import {Ingredient} from "../assets/Ingredients.js";
-
-
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import IoIcon from 'react-native-vector-icons/Ionicons'
+import OctIcon from 'react-native-vector-icons/Octicons'
 global.showResults = false, global.setShowResults = false;
 global.strInput = "", global.setInput = "";
 
-
-
-
-
-
 export default class SearchScreen extends Component {
    
-   
-   
-    handleSearch = (event) => {
+    handleAdd = (event) => {
 
        /* event.preventDefault();
         setShowResults(true)*/
@@ -32,228 +23,175 @@ export default class SearchScreen extends Component {
         // State variable are asynchronous, so we make a copy to get the updated value
         const newIngredients = {"ingredients":jsonArr};
         
-
-        // API CALL
-        (async () => {
-            const response = await axios.post("/homepage/findByIngredients", {
-                ingredients: newIngredients
-            }).then((response) => {
-
-                // Parse data
-                const newResults = [];
-                const ids = [];
-
-                response.data.forEach((rec) => {
-                    // Add id to ids
-                    ids.push(rec.id);
-
-                    // Get ingredients from rec
-                    const ingredientList = []
-                    rec.missedIngredients.forEach((ing) => {
-                        ingredientList.push(ing.name);
-                    });
-                    rec.usedIngredients.forEach((ing) => {
-                        ingredientList.push(ing.name);
-                    });
-
-                    // Build recipe object
-                    const recipe = {
-                        title: rec.title,
-                        image: rec.image,
-                        id: rec.id,
-                        ingredients: ingredientList
-                    }
-
-                    newResults.push(recipe);
-                    localStorage.setItem(recipe.id, JSON.stringify(recipe)); // TODO: temp
-                });
-
-                // (async () => {const response = await axios.post("/homepage/getInstructionsBulk", {
-                //         ids: ids.toString()
-                //     }).then((response) => {
-                        
-                        // response.data.forEach((rec, i) => {
-                        //     // Add instructions
-                        //     newResults[i].instructions = rec.instructions;
-
-                        //     // Add to storage
-                        //     localStorage.setItem(newResults[i].id, newResults[i]);
-                        // });
-
-                        console.log(newResults);
-                        setResults(newResults);
-                //     }).catch((error) => {
-                //         // What to do when search fails?
-                //         console.log("inner error");
-                //         // console.log(`${error.response.status}\n${error.response}`);
-                //     });
-                // })();
-            
-            }).catch((error) => {
-                // What to do when search fails?
-                // console.log(`${error.response.status}\n${error.response}`);
-                console.log("outer error");
-            });
-        })();
-        
-
-        // FILTER TO ENSURE REQUIRED ON HERE
-        // SET RESULTS
+        this.addToObject(jsonArr)
     }
-         
-        
-                
-                
 
-
-        
-    
     handleChange = (text) => {
         strInput = text;
         //setInput(strInput);
     }
-getSearchResults = () => {
-    //TODO: Hit API for recipes
-    return [{
-        title: 'Pasta',
-        rating: 4.5,
-        ingredients: [
-            'flour', 'cheese', 'eggs'
-        ],
-        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
-        id: 632660,
-        numMade: 5,
-        numSaved: 3
-    }, {
-        title: 'Bread',
-        rating: 3.5,
-        ingredients: [
-            'flour', 'eggs', 'butter'
-        ],
-        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
-        id: 12312,
-        numMade: 7,
-        numSaved: 1
-    }, {
-        title: 'Bread',
-        rating: 3.5,
-        ingredients: [
-            'flour', 'eggs', 'butter'
-        ],
-        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
-        id: 12312,
-        numMade: 7,
-        numSaved: 1
-    }, {
-        title: 'Bread',
-        rating: 3.5,
-        ingredients: [
-            'flour', 'eggs', 'butter'
-        ],
-        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
-        id: 12312,
-        numMade: 7,
-        numSaved: 1
-    }, {
-        title: 'Bread',
-        rating: 3.5,
-        ingredients: [
-            'flour', 'eggs', 'butter'
-        ],
-        image: "https://spoonacular.com/recipeImages/632660-312x231.jpg",
-        id: 12312,
-        numMade: 7,
-        numSaved: 1
-    }];
-}
+
+getIngridients = [{title: "Ingredients", 
+id: 1, data: []},
+ {title: 'Exclude', id: 1, data: []}];
+   
+
+    constructor() {
+        super()
+        this.state = {
+            isExcluded: false,
+            includeList: 0,
+            excludeList: 0,
+            foodList: this.getIngridients
+        }
+    }
+    listItem = ({item, index}) => {
+        //this.setState({includeList: this.state.includeList + 1});
+        return (
+            <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingRight: '10%', margin: '3%'}}>
+                <TouchableOpacity style= {{flex: 1}}onPress= {() => this.deleteItemById(item, index)}>
+                <OctIcon style={{flex: 1/5}}
+                        name='x'
+                        color={"#FEFAE0"}
+                        size= {45}/>
+                </TouchableOpacity>
+                <Text numberOfLines={2} ellipsisMode= 'tail' style={{flex: 4/5, marginLeft: '5%', alignItems: 'center', textAlign: 'center', color: '#7C5227', fontSize: 26, fontWeight: '600'}}>{item}</Text>
+            </View>
+        )
+    
+    }
+
+    addToObject = (newList) => {
+        if (this.state.isExcluded) {
+
+            //Check to see if items are on the other
+                let arr = this.state.foodList.at('1').data.concat(newList);
+
+                let uniqueArr = [...new Set(arr)];
+                let newFoodList = this.state.foodList;
+
+                if (uniqueArr.length == 0) {
+                    return;
+                }
+
+                let notExist = uniqueArr.every(element => {
+                    if (newFoodList.at(0).data.includes(element)) { //checks excluded
+                        console.log(element + " is in the Ingredients List!");
+                        return false;
+                    }
+                    return true;
+                });
+                
+                if(!notExist) {
+                    return;
+                }
+
+                newFoodList.at(1).data = uniqueArr.slice(0);
+                let length = newFoodList.at(1).data.length
+                this.setState({foodLis: newFoodList, excludeList: length});
+        } else {
+            if(newList != "") {
+                let arr = this.state.foodList.at('0').data.concat(newList);
+
+                let uniqueArr = [...new Set(arr)];
+
+                if (uniqueArr.length == 0) {
+                    return;
+                }
+
+                let newFoodList = this.state.foodList;
+
+                let notExist = uniqueArr.every(element => {
+                    if (newFoodList.at(1).data.includes(element)) { //checks excluded
+                        console.log(element + " is in the Exclude List!");
+                        return false;
+                    }
+                    return true;
+                });
+                
+                if(!notExist) {
+                    return;
+                }
+                newFoodList.at(0).data = uniqueArr.slice(0);
+                let length = newFoodList.at(0).data.length;
+                this.setState({foodLis: newFoodList, includeList: length});
+            }
+
+        }
+    }
+
+    deleteItemById = (id, index) => {
+        let title = "";
+        const filteredData = this.state.foodList.filter(item => {
+            if (item.data[index] == id) {
+                item.data.splice(index, 1);
+                title = item.title;
+            }
+            return item;
+        });
+        if (title == "Ingredients") {
+            this.setState({ foodList: filteredData, includeList: this.state.includeList - 1});
+        }
+        else {
+            this.setState({ foodList: filteredData, excludeList: this.state.excludeList - 1});
+        }
+      }
 
     render() {
+         
         return(
-            <View style= {styles.mainContainer}>
-                <View style={styles.box1}>
-                <TextInput style={styles.textInput}
-                onChangeText={this.handleChange} placeholder="type ingredients seperated by a comma..."></TextInput>
-                <Button onPress={this.handleSearch}
-                title= "Search"></Button>
-                <Button onPress={() => this.props.navigation.navigate('Login')}
-                title= "Logout"></Button>
-                </View>
-                <View style={styles.rowBox}>
-                <View style={styles.box2}>
-                    <Text>Ingredients</Text>
-                     
-                     <FlatList
-                       
-                      />
-                     
-                </View>
-                <View style={styles.box3}>
-                    <ScrollView>
-                        <TouchableOpacity style={styles.foodBox} onPress={() => this.props.navigation.navigate('Food')}>
-                            <View style={styles.picture}>
-                                <Text>[Image]</Text>
-                             </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.foodName}>
-                                    <Text>Food Name</Text>
-                                </View>
-                                <View style={styles.info}>
-                                    <Text>3/3 ingredients</Text>
-                                </View>
-                            </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.cookTime}>
-                                    <Text>1 hour</Text>
-                                </View>
-                                <View style={styles.rating}>
-                                    <Text>5 stars</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                        <View style={styles.foodBox}>
-                            <View style={styles.picture}>
-                                <Text>[Image]</Text>
-                             </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.foodName}>
-                                    <Text>Food Name</Text>
-                                </View>
-                                <View style={styles.info}>
-                                    <Text>3/3 ingredients</Text>
-                                </View>
-                            </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.cookTime}>
-                                    <Text>1 hour</Text>
-                                </View>
-                                <View style={styles.rating}>
-                                    <Text>5 stars</Text>
-                                </View>
+            <View style={styles.mainContainer}>
+                <View style= {styles.container}>
+                    <View style= {{height: getHeight() * 0.25, width: '100%', backgroundColor: '#FEFAE0'}}>
+                    <View style={styles.header}>
+                        <View style= {{ flex: 3/5}}>
+                            <View style= {{flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                            <TextInput style={[styles.textInput]} 
+                                onChangeText={this.handleChange} 
+                                placeholder="Seperate ingredients with a comma"/>
+                            <TouchableHighlight style= {[styles.addButton, { justifyContent: 'center', alignItems: 'center', padding: 10}]} onPress={this.handleAdd}>
+                                <IoIcon style= {{ textAlign: 'center'}}
+                                        name= "add-outline"
+                                        color= "#FEFAE0"
+                                        size= {32}/>
+                            </TouchableHighlight> 
                             </View>
                         </View>
-                        <View style={styles.foodBox}>
-                            <View style={styles.picture}>
-                                <Text>[Image]</Text>
-                             </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.foodName}>
-                                    <Text>Food Name</Text>
-                                </View>
-                                <View style={styles.info}>
-                                    <Text>3/3 ingredients</Text>
-                                </View>
-                            </View>
-                            <View style={{flex:1}}>
-                                <View style={styles.cookTime}>
-                                    <Text>1 hour</Text>
-                                </View>
-                                <View style={styles.rating}>
-                                    <Text>5 stars</Text>
-                                </View>
+                        <View style= {{flex: 2/5, flexDirection: 'row', margin: '2%', marginRight: '8%', justifyContent: 'flex-end', alignItems: 'center'}}>
+                            <Text style= {{fontSize: 15, margin: '0.5%', color: this.state.isExcluded ? 'rgba(239,81,32, 0.80)' : '#A5B082', fontWeight: '600'}}>{this.state.isExcluded ? "Exclude" : "Include"}</Text>
+                            <Switch
+                                onValueChange={(val) => {
+                                    console.log(val)
+                                    this.setState({isExcluded: val});
+                                }}
+                                value={this.state.isExcluded}
+                                trackColor={{true: "rgba(239,81,32, 0.60)", false: "#CCD5AE"}}
+                                ios_backgroundColor="#CCD5AE"
+                                thumbColor={"#7C5227"}/>
+                        </View>
+                    </View>
+                    </View>
+                    <View style={styles.list}>
+                        <View style= {{alignItems: 'center'}}>
+                        <TouchableHighlight style= {styles.searchButton} onPress={this.getRecipes}>
+                                <Text style= {{fontSize: 20, width: '100%', fontWeight: '700', textAlign: 'center', color: '#FEFAE0'}}>Search for Recipes</Text>
+                            </TouchableHighlight> 
+                        </View>
+                        <View style= {{flex: 1, width: getWidth() * 0.95, flexDirection: 'column', margin:'3%', justifyContent: 'center', alignItems: 'center' }}>
+                            <View style= {{flex: 1, width: '100%'}}>
+                            <SectionList
+                                    sections={this.state.foodList}
+                                    renderItem={this.listItem}
+                                    renderSectionHeader={({ section: { title } }) => (
+                                        <Text style={{fontSize: 32, fontWeight: '700', textAlign: 'center', margin:'5%', color: '#7C5227'}}>{ title == "Exclude" && this.state.excludeList == 0 ? "" : title}</Text>
+                                      )}
+                                    keyExtractor={(item, index) => item + index}
+                                    stickySectionHeadersEnabled= {false}
+                                    extraData={this.state}
+                                    />
                             </View>
                         </View>
-                    </ScrollView>
-                </View>
+                    </View>
                 </View>
               <View style={styles.navigator}>
                  <View style={{borderWidth: 1,flex:1,justifyContent:'center'}}>
@@ -271,52 +209,102 @@ getSearchResults = () => {
         )
     }
 
+
+
+getRecipes = async () => {
+    var obj = {ingredients: this.state.foodList.at(0).data.toString()};
+    var js = JSON.stringify(obj);
+    var res;
+    try {
+        //Send Login request
+        const response = await fetch('https://processes-recipe.herokuapp.com/homepage/findByIngredients',
+        {method:'POST', body:js,headers:{'Content-Type': 'application/json'}});
+        res = response;
+        var _results = JSON.parse(await res.text());
+        if( res.status == 200 ) //Success
+        {
+          this.props.navigation.navigate('ResultsList', {
+            recipe: _results, length: _results.length
+          });
+        }
+      }
+      catch (error) { //Falls here if status code is not 200
+          console.log(res.status);        
+      }
+}
 }
 
+function getWidth() {
+    if (Dimensions.get('window').width > Dimensions.get('window').height) {
+        return Dimensions.get('window').height;
+    }
+    else {
+        return Dimensions.get('window').width;
+    }
+  }
+  
+  function getHeight() {
+    if (Dimensions.get('window').height > Dimensions.get('window').width) {
+      return Dimensions.get('window').height;
+    }
+    else {
+        return Dimensions.get('window').width;
+    }
+}
 
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
-      backgroundColor: '#FEFAE0',
-      flexDirection: 'column',
+      backgroundColor: '#BBC893',
     },
-    rowBox: {
-        flexDirection: 'row',
-        flex: 5,
-        paddingTop: 25,
-        
-    },
-    box1: {
-        backgroundColor: 'blue',
-        alignItems: 'center',
-        flex:1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-       
-      },
-    box2: {
-        backgroundColor: 'red',
-        alignItems: 'center',
+    container: {
         flex: 1,
-        
+        alignItems: 'center',
     },
-    box3: {
-        backgroundColor: 'green',
-        flex: 3,
-        
+    header: {
+        flex: 1,
+        marginTop: getHeight() * 0.08,
+        backgroundColor: '#FEFAE0',
+        width: '100%',
+        flexDirection:'column',
+        justifyContent: 'center'
+    },
+    list: {
+        flex: 1,
+        backgroundColor: "#BBC893",
+        width: getWidth() * 0.95,
+        alignItems: 'center' 
     },
     textInput: {
-        height: 40,
-        width: 300,
+        height: '80%',
+        width: '80%',
         color: '#7C5227',
-        padding: 15,
-        fontSize: 15,
+        padding: 10,
+        fontSize: 18,
+        justifyContent: 'center',
         fontWeight: '600',
         borderWidth: 0,
-        borderRadius: 5,
-        backgroundColor: 'white',
+        borderBottomLeftRadius: 10,
+        borderTopLeftRadius: 10,
+        backgroundColor: 'white'
       },
-    foodBox: {
+      addButton: {
+        backgroundColor: '#7C5227',
+        height: '80%',
+        width: '100%',
+        borderWidth: 0,
+        borderBottomRightRadius: 5,
+        borderTopRightRadius: 5
+      },
+      searchButton: {
+        justifyContent: 'center',
+        margin: '1%',
+        padding: 10,
+        backgroundColor: "#7C5227",
+        width: '80%',
+        borderRadius: 5
+      },
+      foodBox: {
         backgroundColor: 'purple',
         height: 120,
         flexDirection: 'row',
@@ -345,19 +333,5 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row'
-    },
-   navigator: {
-      flex: .4,
-      backgroundColor: 'white',
-      flexDirection: 'row'
-   },
-   tinyLogo: {
-    width: 50,
-    height: 50,
-    marginTop: 15,
-    marginBottom: 15,
-  },
-    
-
+    }
 });
-  
