@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, TextInput, View, Dimensions, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { AsyncStorage } from '@react-native-async-storage/async-storage';
+import { AsyncStorage } from 'react-native-async-storage/async-storage';
 
 global.email = "", global.password = "";
 export default class LoginScreen extends Component {
